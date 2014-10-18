@@ -7,6 +7,8 @@
 //
 
 #import "ViewController.h"
+#import "DataExtractor.h"
+
 
 @interface ViewController ()
 
@@ -17,6 +19,10 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    DataExtractor *data = [[DataExtractor alloc] init];
+    NSMutableArray *all = [data getAllNOM];
+    NSLog(@"todo: %d",all.count);
 }
 
 - (void)didReceiveMemoryWarning {

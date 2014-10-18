@@ -19,6 +19,8 @@
 		0DC722D619F2AC0100F9DD51 /* DataExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DC722D519F2AC0100F9DD51 /* DataExtractor.m */; };
 		0DC722D919F2AC5000F9DD51 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DC722D819F2AC5000F9DD51 /* libsqlite3.dylib */; };
 		0DC722DC19F2ACBB00F9DD51 /* Norma.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DC722DB19F2ACBB00F9DD51 /* Norma.m */; };
+		0DC722DE19F2B0AE00F9DD51 /* catanmx.db in Resources */ = {isa = PBXBuildFile; fileRef = 0DC722DD19F2B0AE00F9DD51 /* catanmx.db */; };
+		0DC722E119F2B79800F9DD51 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DC722E019F2B79800F9DD51 /* TableViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,9 @@
 		0DC722D819F2AC5000F9DD51 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		0DC722DA19F2ACBB00F9DD51 /* Norma.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Norma.h; sourceTree = "<group>"; };
 		0DC722DB19F2ACBB00F9DD51 /* Norma.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Norma.m; sourceTree = "<group>"; };
+		0DC722DD19F2B0AE00F9DD51 /* catanmx.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = catanmx.db; sourceTree = "<group>"; };
+		0DC722DF19F2B79800F9DD51 /* TableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TableViewCell.h; sourceTree = "<group>"; };
+		0DC722E019F2B79800F9DD51 /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +110,8 @@
 				0DC722AF19F2AB7100F9DD51 /* DGN_Movil.xcdatamodeld */,
 				0DC722A819F2AB7100F9DD51 /* Supporting Files */,
 				0DC722D719F2AC0700F9DD51 /* Datos */,
+				0DC722DF19F2B79800F9DD51 /* TableViewCell.h */,
+				0DC722E019F2B79800F9DD51 /* TableViewCell.m */,
 			);
 			path = "DGN Movil";
 			sourceTree = "<group>";
@@ -112,6 +119,7 @@
 		0DC722A819F2AB7100F9DD51 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				0DC722DD19F2B0AE00F9DD51 /* catanmx.db */,
 				0DC722D819F2AC5000F9DD51 /* libsqlite3.dylib */,
 				0DC722A919F2AB7100F9DD51 /* Info.plist */,
 				0DC722AA19F2AB7100F9DD51 /* main.m */,
@@ -231,6 +239,7 @@
 			files = (
 				0DC722B719F2AB7100F9DD51 /* Main.storyboard in Resources */,
 				0DC722BC19F2AB7100F9DD51 /* LaunchScreen.xib in Resources */,
+				0DC722DE19F2B0AE00F9DD51 /* catanmx.db in Resources */,
 				0DC722B919F2AB7100F9DD51 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -254,6 +263,7 @@
 				0DC722B419F2AB7100F9DD51 /* ViewController.m in Sources */,
 				0DC722D319F2ABEC00F9DD51 /* Conexion.m in Sources */,
 				0DC722D619F2AC0100F9DD51 /* DataExtractor.m in Sources */,
+				0DC722E119F2B79800F9DD51 /* TableViewCell.m in Sources */,
 				0DC722DC19F2ACBB00F9DD51 /* Norma.m in Sources */,
 				0DC722AB19F2AB7100F9DD51 /* main.m in Sources */,
 			);
