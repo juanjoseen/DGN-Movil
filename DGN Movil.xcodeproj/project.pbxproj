@@ -15,6 +15,10 @@
 		0DC722B919F2AB7100F9DD51 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0DC722B819F2AB7100F9DD51 /* Images.xcassets */; };
 		0DC722BC19F2AB7100F9DD51 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0DC722BA19F2AB7100F9DD51 /* LaunchScreen.xib */; };
 		0DC722C819F2AB7100F9DD51 /* DGN_MovilTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DC722C719F2AB7100F9DD51 /* DGN_MovilTests.m */; };
+		0DC722D319F2ABEC00F9DD51 /* Conexion.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DC722D219F2ABEC00F9DD51 /* Conexion.m */; };
+		0DC722D619F2AC0100F9DD51 /* DataExtractor.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DC722D519F2AC0100F9DD51 /* DataExtractor.m */; };
+		0DC722D919F2AC5000F9DD51 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DC722D819F2AC5000F9DD51 /* libsqlite3.dylib */; };
+		0DC722DC19F2ACBB00F9DD51 /* Norma.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DC722DB19F2ACBB00F9DD51 /* Norma.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +46,13 @@
 		0DC722C119F2AB7100F9DD51 /* DGN MovilTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "DGN MovilTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DC722C619F2AB7100F9DD51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0DC722C719F2AB7100F9DD51 /* DGN_MovilTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DGN_MovilTests.m; sourceTree = "<group>"; };
+		0DC722D119F2ABEC00F9DD51 /* Conexion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Conexion.h; sourceTree = "<group>"; };
+		0DC722D219F2ABEC00F9DD51 /* Conexion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Conexion.m; sourceTree = "<group>"; };
+		0DC722D419F2AC0100F9DD51 /* DataExtractor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DataExtractor.h; sourceTree = "<group>"; };
+		0DC722D519F2AC0100F9DD51 /* DataExtractor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DataExtractor.m; sourceTree = "<group>"; };
+		0DC722D819F2AC5000F9DD51 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		0DC722DA19F2ACBB00F9DD51 /* Norma.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Norma.h; sourceTree = "<group>"; };
+		0DC722DB19F2ACBB00F9DD51 /* Norma.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Norma.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0DC722D919F2AC5000F9DD51 /* libsqlite3.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -92,6 +104,7 @@
 				0DC722BA19F2AB7100F9DD51 /* LaunchScreen.xib */,
 				0DC722AF19F2AB7100F9DD51 /* DGN_Movil.xcdatamodeld */,
 				0DC722A819F2AB7100F9DD51 /* Supporting Files */,
+				0DC722D719F2AC0700F9DD51 /* Datos */,
 			);
 			path = "DGN Movil";
 			sourceTree = "<group>";
@@ -99,6 +112,7 @@
 		0DC722A819F2AB7100F9DD51 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				0DC722D819F2AC5000F9DD51 /* libsqlite3.dylib */,
 				0DC722A919F2AB7100F9DD51 /* Info.plist */,
 				0DC722AA19F2AB7100F9DD51 /* main.m */,
 			);
@@ -120,6 +134,19 @@
 				0DC722C619F2AB7100F9DD51 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0DC722D719F2AC0700F9DD51 /* Datos */ = {
+			isa = PBXGroup;
+			children = (
+				0DC722D119F2ABEC00F9DD51 /* Conexion.h */,
+				0DC722D219F2ABEC00F9DD51 /* Conexion.m */,
+				0DC722D419F2AC0100F9DD51 /* DataExtractor.h */,
+				0DC722D519F2AC0100F9DD51 /* DataExtractor.m */,
+				0DC722DA19F2ACBB00F9DD51 /* Norma.h */,
+				0DC722DB19F2ACBB00F9DD51 /* Norma.m */,
+			);
+			name = Datos;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -225,6 +252,9 @@
 				0DC722B119F2AB7100F9DD51 /* DGN_Movil.xcdatamodeld in Sources */,
 				0DC722AE19F2AB7100F9DD51 /* AppDelegate.m in Sources */,
 				0DC722B419F2AB7100F9DD51 /* ViewController.m in Sources */,
+				0DC722D319F2ABEC00F9DD51 /* Conexion.m in Sources */,
+				0DC722D619F2AC0100F9DD51 /* DataExtractor.m in Sources */,
+				0DC722DC19F2ACBB00F9DD51 /* Norma.m in Sources */,
 				0DC722AB19F2AB7100F9DD51 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
