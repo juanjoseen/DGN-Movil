@@ -7,12 +7,38 @@
 //
 
 #import "FavoritosTableViewController.h"
+#import "DataExtractor.h"
+#import "NormaTableViewCell.h"
 
 @interface FavoritosTableViewController ()
 
 @end
 
-@implementation FavoritosTableViewController
+@implementation FavoritosTableViewController{
+    NSArray *secciones;
+    
+    NSMutableArray *favNOMs;
+    NSMutableArray *favNMXs;
+    
+    NSDateFormatter *dateformat;
+}
+
+- (void)viewWillAppear:(BOOL)animated{
+    [super viewWillAppear:animated];
+    UINavigationBar *navBar = self.navigationController.navigationBar;
+    navBar.hidden = NO;
+    navBar.barTintColor = [UIColor colorWithRed:3.0/255.0 green:93.0/255.0 blue:5.0/255.0 alpha:1.0];
+    navBar.tintColor = [UIColor whiteColor];
+    navBar.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor whiteColor]};
+}
+
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    if (!favNOMs && !favNMXs){
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"Por ahora no tiene ninguna norma marcada como favorita, por favor marque algunas para poder acceder a esta seccion" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
+        [alert show];
+    }
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -22,6 +48,14 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    
+    secciones = @[@"NMX",@"NOM"];
+    DataExtractor *data = [[DataExtractor alloc] init];
+    favNMXs = [data getFavoritosNMX];
+    favNOMs = [data getFavoritosNOM];
+    
+    dateformat=[[NSDateFormatter alloc]init];
+    [dateformat setDateFormat:@"YYYY-MM-DD"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -32,26 +66,42 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 2;
 }
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    return secciones[section];
+}
+
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    if (section == 0)
+        return favNMXs.count;
+    return favNOMs.count;
 }
 
-/*
+//*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    NormaTableViewCell *cell = (NormaTableViewCell*)[tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
     // Configure the cell...
+    if (indexPath.section == 0){
+        Norma *nmx = favNMXs[indexPath.row];
+        cell.clave.text = nmx.clave;
+        cell.fecha.text = [dateformat stringFromDate:nmx.fecha];
+        cell.descripcion.text = nmx.titulo;
+    } else {
+        Norma *nom = favNOMs[indexPath.row];
+        cell.clave.text = nom.clave;
+        cell.fecha.text = [dateformat stringFromDate:nom.fecha];
+        cell.descripcion.text = nom.titulo;
+    }
     
     return cell;
 }
-*/
+// */
 
 /*
 // Override to support conditional editing of the table view.
@@ -96,5 +146,9 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (BOOL)prefersStatusBarHidden{
+    return  YES;
+}
 
 @end

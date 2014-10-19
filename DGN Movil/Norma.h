@@ -25,6 +25,7 @@
 @property (nonatomic, retain) NSString *ONN;
 @property (nonatomic, retain) NSString *documento;
 @property (nonatomic, retain) NSString *conteo;
+@property (nonatomic) BOOL favorito;
 
 - (id)initWithKey:(NSString*)clave;
 - (id)initWithKey:(NSString*)clave andTitle:(NSString*)titulo;

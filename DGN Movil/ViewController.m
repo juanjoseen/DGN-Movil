@@ -178,7 +178,7 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.row < 2){
+    if (indexPath.row < 3){
         //[UIView animateWithDuration:0.3 animations:^{
         //    _menu.frame = CGRectMake(0, 0, self.view.frame.size.width, _menu.frame.size.height);
         //}completion:^(BOOL finished){

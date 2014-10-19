@@ -21,7 +21,6 @@
 		0DC722DC19F2ACBB00F9DD51 /* Norma.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DC722DB19F2ACBB00F9DD51 /* Norma.m */; };
 		0DC722E119F2B79800F9DD51 /* TableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DC722E019F2B79800F9DD51 /* TableViewCell.m */; };
 		0DC722E719F2EF2C00F9DD51 /* BPPalabraTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DC722E619F2EF2C00F9DD51 /* BPPalabraTableViewController.m */; };
-		0DC722E919F3064800F9DD51 /* catanmx.db in Resources */ = {isa = PBXBuildFile; fileRef = 0DC722E819F3064800F9DD51 /* catanmx.db */; };
 		0DC722EF19F31A0600F9DD51 /* NormaTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DC722EE19F31A0600F9DD51 /* NormaTableViewCell.m */; };
 		0DC722F219F31F1E00F9DD51 /* DetailNormaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DC722F119F31F1E00F9DD51 /* DetailNormaViewController.m */; };
 		0DC722F619F32AB600F9DD51 /* BPCriterioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DC722F519F32AB600F9DD51 /* BPCriterioViewController.m */; };
@@ -30,6 +29,7 @@
 		0DDDF03C19F366340018B95D /* FechasViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDDF03B19F366340018B95D /* FechasViewController.m */; };
 		0DDDF03F19F3AADF0018B95D /* SearchDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDDF03E19F3AADF0018B95D /* SearchDetailTableViewController.m */; };
 		0DDDF04219F3B8F40018B95D /* FavoritosTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDDF04119F3B8F40018B95D /* FavoritosTableViewController.m */; };
+		0DDDF04419F3CF920018B95D /* catanmx.db in Resources */ = {isa = PBXBuildFile; fileRef = 0DDDF04319F3CF920018B95D /* catanmx.db */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,7 +68,6 @@
 		0DC722E019F2B79800F9DD51 /* TableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TableViewCell.m; sourceTree = "<group>"; };
 		0DC722E519F2EF2C00F9DD51 /* BPPalabraTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPPalabraTableViewController.h; sourceTree = "<group>"; };
 		0DC722E619F2EF2C00F9DD51 /* BPPalabraTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPPalabraTableViewController.m; sourceTree = "<group>"; };
-		0DC722E819F3064800F9DD51 /* catanmx.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = catanmx.db; sourceTree = "<group>"; };
 		0DC722ED19F31A0600F9DD51 /* NormaTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NormaTableViewCell.h; sourceTree = "<group>"; };
 		0DC722EE19F31A0600F9DD51 /* NormaTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NormaTableViewCell.m; sourceTree = "<group>"; };
 		0DC722F019F31F1E00F9DD51 /* DetailNormaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailNormaViewController.h; sourceTree = "<group>"; };
@@ -85,6 +84,7 @@
 		0DDDF03E19F3AADF0018B95D /* SearchDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchDetailTableViewController.m; sourceTree = "<group>"; };
 		0DDDF04019F3B8F40018B95D /* FavoritosTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoritosTableViewController.h; sourceTree = "<group>"; };
 		0DDDF04119F3B8F40018B95D /* FavoritosTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoritosTableViewController.m; sourceTree = "<group>"; };
+		0DDDF04319F3CF920018B95D /* catanmx.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = catanmx.db; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,7 +161,7 @@
 		0DC722A819F2AB7100F9DD51 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				0DC722E819F3064800F9DD51 /* catanmx.db */,
+				0DDDF04319F3CF920018B95D /* catanmx.db */,
 				0DC722D819F2AC5000F9DD51 /* libsqlite3.dylib */,
 				0DC722A919F2AB7100F9DD51 /* Info.plist */,
 				0DC722AA19F2AB7100F9DD51 /* main.m */,
@@ -292,7 +292,7 @@
 			files = (
 				0DC722B719F2AB7100F9DD51 /* Main.storyboard in Resources */,
 				0DC722BC19F2AB7100F9DD51 /* LaunchScreen.xib in Resources */,
-				0DC722E919F3064800F9DD51 /* catanmx.db in Resources */,
+				0DDDF04419F3CF920018B95D /* catanmx.db in Resources */,
 				0DC722B919F2AB7100F9DD51 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
