@@ -19,7 +19,7 @@
     
     NSMutableArray *favNOMs;
     NSMutableArray *favNMXs;
-    
+    ///HOLA JUAN AL PARECER EL GITHUB SI SIRVE
     NSDateFormatter *dateformat;
 }
 
