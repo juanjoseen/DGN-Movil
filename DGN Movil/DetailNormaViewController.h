@@ -13,4 +13,7 @@
 
 @property (nonatomic, retain) Norma *norma;
 
+@property (strong, nonatomic) IBOutlet UIScrollView *scroller;
+
+- (void)btnSelected;
 @end
