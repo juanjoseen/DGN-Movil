@@ -53,6 +53,7 @@
     [self.tableView scrollToRowAtIndexPath:[NSIndexPath indexPathForRow:contenido.count-1 inSection:0] atScrollPosition:UITableViewScrollPositionBottom animated:YES];
     // */
     
+    /*
     if (navBar.hidden == NO && !cargo){
         [UIView animateWithDuration:0.1 animations:^{
             self.tableView.frame = CGRectMake(0, navBar.frame.size.height, self.tableView.frame.size.width, self.tableView.frame.size.height);
@@ -61,6 +62,7 @@
     
     if (cargo)
         cargo = NO;
+     */
     
 }
 - (void)viewWillDisappear:(BOOL)animated{

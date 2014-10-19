@@ -120,7 +120,7 @@
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="O8y-rB-E3Y">
                                             <rect key="frame" x="8" y="67" width="265" height="45"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                             <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                             <nil key="highlightedColor"/>
                                         </label>
@@ -259,6 +259,9 @@
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="buscar:" destination="ATy-T6-Lhl" eventType="touchUpInside" id="V1d-VS-Lhg"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="Wgl-GQ-ajo">
                                 <rect key="frame" x="0.0" y="431" width="320" height="30"/>
@@ -279,11 +282,22 @@
                                 <color key="onTintColor" red="0.01176470588" green="0.36470588240000001" blue="0.019607843140000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="thumbTintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </switch>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="oPp-gZ-hnq">
+                                <rect key="frame" x="16" y="518" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="jlf-Qm-zx8" kind="push" identifier="toSearchDetailSegue" id="ePr-cx-bAH"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Busqueda por Criterio" id="Bud-G6-zWt"/>
                     <connections>
+                        <outlet property="definitiva" destination="dMK-IO-QYm" id="VaF-pO-Ncy"/>
                         <outlet property="txtClave" destination="gFk-pF-cAE" id="QDS-Pg-wha"/>
                         <outlet property="txtDep" destination="bv5-58-O4P" id="Oe8-po-h7B"/>
                         <outlet property="txtFecha" destination="Wgl-GQ-ajo" id="c9h-bi-dyv"/>
@@ -339,7 +353,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eA4-KN-a7f" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1714" y="895"/>
+            <point key="canvasLocation" x="1796" y="1779"/>
         </scene>
         <!--Fechas View Controller-->
         <scene sceneID="Fcy-qs-Pnr">
@@ -353,7 +367,11 @@
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <items>
-                                    <barButtonItem title="Item" id="a3y-kP-L9x"/>
+                                    <barButtonItem image="02BSuperior02Atrás" id="a3y-kP-L9x">
+                                        <connections>
+                                            <action selector="regresa:" destination="zA4-cd-vUl" id="OFM-ha-3r8"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Vjq-C5-EXn"/>
                                     <barButtonItem title="Fecha de Publicación" id="GG0-Tw-ZMc"/>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="Jxh-dp-OwS"/>
@@ -367,6 +385,9 @@
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="primero:" destination="zA4-cd-vUl" eventType="touchUpInside" id="D7A-B0-Cmd"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="Meh-EV-VQ9">
                                 <rect key="frame" x="0.0" y="94" width="320" height="30"/>
@@ -382,6 +403,9 @@
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="segundo:" destination="zA4-cd-vUl" eventType="touchUpInside" id="kRC-oN-cF3"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="kGM-TI-BFX">
                                 <rect key="frame" x="0.0" y="194" width="320" height="30"/>
@@ -389,7 +413,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" id="45U-H1-IRl">
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" minuteInterval="30" id="45U-H1-IRl">
                                 <rect key="frame" x="0.0" y="406" width="320" height="162"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <date key="date" timeIntervalSinceReferenceDate="435382199.20620298">
@@ -402,6 +426,9 @@
                                 <state key="normal" title="Ok">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="setFecha:" destination="zA4-cd-vUl" eventType="touchUpInside" id="yya-E3-pKp"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -416,7 +443,64 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tlX-GG-Nep" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2170" y="1160"/>
+            <point key="canvasLocation" x="2220" y="1779"/>
+        </scene>
+        <!--Resultado de Busqueda-->
+        <scene sceneID="AhS-qh-Z79">
+            <objects>
+                <tableViewController id="jlf-Qm-zx8" customClass="SearchDetailTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="121" sectionHeaderHeight="22" sectionFooterHeight="22" id="dwp-f3-54h">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="checkmark" indentationWidth="10" reuseIdentifier="Cell" rowHeight="121" id="myB-Ss-mhA" customClass="NormaTableViewCell">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="myB-Ss-mhA" id="ebp-Fd-9pw">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0JA-bc-8qT">
+                                            <rect key="frame" x="8" y="8" width="273" height="33"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="iuf-5S-3gk">
+                                            <rect key="frame" x="8" y="67" width="265" height="45"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nmJ-j9-EVV">
+                                            <rect key="frame" x="8" y="38" width="265" height="21"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="italicSystem" pointSize="14"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="clave" destination="0JA-bc-8qT" id="FKr-T2-NMd"/>
+                                    <outlet property="descripcion" destination="iuf-5S-3gk" id="bzG-D2-BXQ"/>
+                                    <outlet property="fecha" destination="nmJ-j9-EVV" id="IMB-H9-0Hm"/>
+                                    <segue destination="79a-fd-Cad" kind="push" id="M8t-X9-LO5"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="jlf-Qm-zx8" id="rWR-IV-TCI"/>
+                            <outlet property="delegate" destination="jlf-Qm-zx8" id="FRB-tl-yZ5"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Resultado de Busqueda" id="nAR-nL-PD6"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="q5c-hO-jAK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1796" y="1035"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="FtS-VK-8xN">
@@ -447,7 +531,7 @@
                             </items>
                         </toolbar>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="Pht-It-p4P">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="Cell" id="Pht-It-p4P">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Pht-It-p4P" id="JkT-0H-DD4">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -466,7 +550,7 @@
                     </connections>
                 </tableViewController>
             </objects>
-            <point key="canvasLocation" x="1714" y="1527"/>
+            <point key="canvasLocation" x="1280" y="1779"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4fr-Xj-obO">
@@ -497,4 +581,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="0vh-SL-aL8"/>
+    </inferredMetricsTieBreakers>
 </document>

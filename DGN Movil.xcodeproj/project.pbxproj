@@ -28,6 +28,7 @@
 		0DDDF03619F342B40018B95D /* DependenciasTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDDF03519F342B30018B95D /* DependenciasTableViewController.m */; };
 		0DDDF03919F358BE0018B95D /* RAETableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDDF03819F358BE0018B95D /* RAETableViewController.m */; };
 		0DDDF03C19F366340018B95D /* FechasViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDDF03B19F366340018B95D /* FechasViewController.m */; };
+		0DDDF03F19F3AADF0018B95D /* SearchDetailTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDDF03E19F3AADF0018B95D /* SearchDetailTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,8 @@
 		0DDDF03819F358BE0018B95D /* RAETableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAETableViewController.m; sourceTree = "<group>"; };
 		0DDDF03A19F366340018B95D /* FechasViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FechasViewController.h; sourceTree = "<group>"; };
 		0DDDF03B19F366340018B95D /* FechasViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FechasViewController.m; sourceTree = "<group>"; };
+		0DDDF03D19F3AADF0018B95D /* SearchDetailTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchDetailTableViewController.h; sourceTree = "<group>"; };
+		0DDDF03E19F3AADF0018B95D /* SearchDetailTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchDetailTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -144,6 +147,8 @@
 				0DDDF03819F358BE0018B95D /* RAETableViewController.m */,
 				0DDDF03A19F366340018B95D /* FechasViewController.h */,
 				0DDDF03B19F366340018B95D /* FechasViewController.m */,
+				0DDDF03D19F3AADF0018B95D /* SearchDetailTableViewController.h */,
+				0DDDF03E19F3AADF0018B95D /* SearchDetailTableViewController.m */,
 			);
 			path = "DGN Movil";
 			sourceTree = "<group>";
@@ -305,6 +310,7 @@
 				0DC722AE19F2AB7100F9DD51 /* AppDelegate.m in Sources */,
 				0DC722B419F2AB7100F9DD51 /* ViewController.m in Sources */,
 				0DC722F619F32AB600F9DD51 /* BPCriterioViewController.m in Sources */,
+				0DDDF03F19F3AADF0018B95D /* SearchDetailTableViewController.m in Sources */,
 				0DDDF03619F342B40018B95D /* DependenciasTableViewController.m in Sources */,
 				0DDDF03C19F366340018B95D /* FechasViewController.m in Sources */,
 				0DC722E719F2EF2C00F9DD51 /* BPPalabraTableViewController.m in Sources */,

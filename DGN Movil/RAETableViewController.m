@@ -134,6 +134,9 @@
         }
     }
     
+    cell.backgroundColor = [UIColor darkGrayColor];
+    cell.textLabel.textColor = [UIColor lightGrayColor];
+    
     return cell;
 }
 //*/
@@ -232,6 +235,12 @@
     [self hideSearchBar];
 }
 
+- (void)tableView:(UITableView *)tableView didHighlightRowAtIndexPath:(NSIndexPath *)indexPath{
+    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+    cell.backgroundColor = [UIColor colorWithRed:3.0/255.0 green:93.0/255.0 blue:5.0/255.0 alpha:1.0];
+    cell.textLabel.textColor = [UIColor whiteColor];
+}
+
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     if(isSearching){
         if (indexPath.section == 0) {
@@ -240,6 +249,7 @@
             selected = sNOM[indexPath.row];
             
         }
+        [self hideSearchBar];
         
     }else{
         if (indexPath.section == 0) {
@@ -249,8 +259,16 @@
         
         }
     }
+    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+    cell.backgroundColor = [UIColor colorWithRed:3.0/255.0 green:93.0/255.0 blue:5.0/255.0 alpha:1.0];
+    cell.textLabel.textColor = [UIColor whiteColor];
     
-    [self hideSearchBar];
+}
+
+- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath{
+    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+    cell.backgroundColor = [UIColor darkGrayColor];
+    cell.textLabel.textColor = [UIColor lightGrayColor];
 }
 
 - (BOOL)prefersStatusBarHidden{
