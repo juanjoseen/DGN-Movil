@@ -45,6 +45,8 @@
     } else if ([segue.identifier isEqualToString:@"raeSegue"]){
         RAETableViewController *rae = (RAETableViewController *)segue.destinationViewController;
         rae.delegate = self;
+    } else if ([segue.identifier isEqualToString:@"fechasSegue"]){
+        
     }
 }
 // */

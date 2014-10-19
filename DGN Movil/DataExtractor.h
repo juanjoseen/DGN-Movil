@@ -24,4 +24,8 @@
 - (Norma *)getNmxByKey:(NSString*)clave;
 - (Norma *)getNomByKey:(NSString*)clave;
 
+- (NSMutableArray *)getRaeNOM;
+- (NSMutableArray *)getRaeNMX;
+- (NSMutableArray *)getDependencias;
+
 @end

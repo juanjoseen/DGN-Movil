@@ -7,6 +7,7 @@
 //
 
 #import "DependenciasTableViewController.h"
+#import "DataExtractor.h"
 
 @interface DependenciasTableViewController ()
 
@@ -30,6 +31,8 @@
     _topBar.tintColor = [UIColor whiteColor];
     
     //_topBar.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor whiteColor]};
+    DataExtractor *data = [[DataExtractor alloc] init];
+    resultados = [data getDependencias];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -39,13 +42,14 @@
 
 - (IBAction)regresa:(id)sender {
     [self.delegate getDependecy:selected];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // Return the number of sections.
-    return 2;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
@@ -58,13 +62,28 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
     // Configure the cell...
-    
+    cell.textLabel.text = resultados[indexPath.row];
+    cell.textLabel.textColor = [UIColor lightGrayColor];
     return cell;
 }
 //*/
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     selected = resultados[indexPath.row];
+    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+    cell.backgroundColor = [UIColor colorWithRed:3.0/255.0 green:93.0/255.0 blue:5.0/255.0 alpha:1.0];
+}
+
+- (void)tableView:(UITableView *)tableView didHighlightRowAtIndexPath:(NSIndexPath *)indexPath{
+    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+    cell.backgroundColor = [UIColor colorWithRed:3.0/255.0 green:93.0/255.0 blue:5.0/255.0 alpha:1.0];
+    cell.textLabel.textColor = [UIColor whiteColor];
+}
+
+- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath{
+    UITableViewCell *cell = [self.tableView cellForRowAtIndexPath:indexPath];
+    cell.backgroundColor = [UIColor darkGrayColor];
+    cell.textLabel.textColor = [UIColor lightGrayColor];
 }
 
 /*

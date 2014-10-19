@@ -7,12 +7,24 @@
 //
 
 #import "RAETableViewController.h"
+#import "DataExtractor.h"
 
 @interface RAETableViewController ()
 
 @end
 
-@implementation RAETableViewController
+@implementation RAETableViewController{
+    NSMutableArray *sNMX;
+    NSMutableArray *sNOM;
+    
+    NSMutableArray *aNMX;
+    NSMutableArray *aNOM;
+    
+    BOOL isSearching;
+    
+    NSArray *secciones;
+    NSString *selected;
+}
 
 
 - (void)viewDidAppear:(BOOL)animated{
@@ -23,6 +35,7 @@
     
     _searchBar.barTintColor = [UIColor colorWithRed:3.0/255.0 green:93.0/255.0 blue:5.0/255.0 alpha:1.0];
     _searchBar.tintColor = [UIColor whiteColor];
+    
 }
 
 - (void)viewDidLoad {
@@ -37,11 +50,25 @@
     _topBar.tintColor = [UIColor whiteColor];
     
     //_searchBar.backgroundColor = [UIColor colorWithRed:3.0/255.0 green:93.0/255.0 blue:5.0/255.0 alpha:1.0];
+    DataExtractor *data = [[DataExtractor alloc] init];
+    aNMX = [data getRaeNMX];
+    aNOM = [data getRaeNOM];
     
+    sNMX = [NSMutableArray array];
+    sNOM = [NSMutableArray array];
     
+    isSearching = NO;
     
+    secciones = @[@"NMX", @"NOM"];
     
 }
+
+- (IBAction)regresa:(id)sender {
+    [self.delegate getRae:selected];
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+}
+
 
 - (IBAction)showSearchBar:(id)sender {
     [UIView animateWithDuration:0.5 animations:^{
@@ -67,26 +94,49 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 2;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    return secciones[section];
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    if (!isSearching){
+        if (section == 0)
+            return aNMX.count;
+        return aNOM.count;
+    } else {
+        if (section == 0)
+            return sNMX.count;
+        return sNOM.count;
+    }
 }
 
-/*
+//*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
     // Configure the cell...
+    if (isSearching){
+        if (indexPath.section == 0){
+            cell.textLabel.text = sNMX[indexPath.row];
+        } else {
+            cell.textLabel.text = sNOM[indexPath.row];
+        }
+    } else {
+        if (indexPath.section == 0){
+            cell.textLabel.text = aNMX[indexPath.row];
+        } else {
+            cell.textLabel.text = aNOM[indexPath.row];
+        }
+    }
     
     return cell;
 }
-*/
+//*/
 
 /*
 // Override to support conditional editing of the table view.
@@ -132,14 +182,76 @@
 }
 */
 
+- (void)searchBarTextDidBeginEditing:(UISearchBar *)searchBar{
+    isSearching = YES;
+    //[searchBar setShowsCancelButton:YES animated:YES];
+}
+
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
+    isSearching = YES;
+    [searchBar setShowsCancelButton:YES animated:YES];
+    [sNMX removeAllObjects];
+    [sNOM removeAllObjects];
     
+    NSLog(@"nmx: %d",aNMX.count);
+    
+    for (NSString *str in aNMX){
+        NSRange range = [str rangeOfString:searchText options:NSCaseInsensitiveSearch];
+        
+        if (range.location != NSNotFound){
+            [sNMX addObject:str];
+        }
+    }
+    
+    for (NSString *str in aNOM){
+        NSLog(@"str: %@",str);
+        NSRange range = [str rangeOfString:searchText options:NSCaseInsensitiveSearch];
+        
+        if (range.location != NSNotFound){
+            [sNOM addObject:str];
+        }
+    }
+    NSLog(@"nmx: %d",sNMX.count);
+    
+    [self.tableView reloadData];
 }
 
 - (void)searchBarCancelButtonClicked:(UISearchBar *)searchBar{
+    isSearching = NO;
+    [searchBar setShowsCancelButton:NO animated:YES];
+    searchBar.text = nil;
+    [searchBar resignFirstResponder];
+    [self hideSearchBar];
+    [self.tableView reloadData];
+}
+
+- (void)searchBarSearchButtonClicked:(UISearchBar *)searchBar{
+    isSearching = NO;
+    [searchBar setShowsCancelButton:NO animated:YES];
+    [searchBar resignFirstResponder];
     [self hideSearchBar];
 }
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    if(isSearching){
+        if (indexPath.section == 0) {
+            selected = sNMX[indexPath.row];
+        }else{
+            selected = sNOM[indexPath.row];
+            
+        }
+        
+    }else{
+        if (indexPath.section == 0) {
+            selected = aNMX[indexPath.row];
+        }else{
+            selected = aNOM[indexPath.row];
+        
+        }
+    }
+    
+    [self hideSearchBar];
+}
 
 - (BOOL)prefersStatusBarHidden{
     return  YES;

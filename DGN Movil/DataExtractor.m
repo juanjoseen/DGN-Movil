@@ -233,6 +233,26 @@
     return [base execQuery:[NSString stringWithFormat:@"UPDATE NMX SET conteo=%d WHERE clave='%@'",[nmx.conteo integerValue]+1,nmx.clave]];
 }
 
+- (NSMutableArray *)getDependencias{
+    NSMutableArray *resultado = [NSMutableArray array];
+    resultado = (NSMutableArray *)[base execSelect:@"SELECT DISTINCT dependencia FROM NOM"];
+    return resultado;
+}
+
+- (NSMutableArray *)getRaeNMX{
+    NSMutableArray *resultado = [NSMutableArray array];
+    resultado = (NSMutableArray *)[base execSelect:@"SELECT DISTINCT rae FROM NMX"];
+    return resultado;
+}
+
+- (NSMutableArray *)getRaeNOM{
+    NSMutableArray *resultado = [NSMutableArray array];
+    resultado = (NSMutableArray *)[base execSelect:@"SELECT DISTINCT rae FROM NOM"];
+    return resultado;
+}
+
+
+
 - (Norma *)getNmxByKey:(NSString *)clave{
     Norma *nmx = nil;
     return nmx;
