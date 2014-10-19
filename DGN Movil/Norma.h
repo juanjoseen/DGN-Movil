@@ -24,6 +24,7 @@
 @property (nonatomic, retain) NSString *CCNN;
 @property (nonatomic, retain) NSString *ONN;
 @property (nonatomic, retain) NSString *documento;
+@property (nonatomic, retain) NSString *conteo;
 
 - (id)initWithKey:(NSString*)clave;
 - (id)initWithKey:(NSString*)clave andTitle:(NSString*)titulo;

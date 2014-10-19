@@ -8,10 +8,14 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <UITableViewDataSource, UITableViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *menu;
 @property (weak, nonatomic) IBOutlet UIImageView *header;
+
+@property (weak, nonatomic) IBOutlet UIImageView *menuSlider;
+
+@property (weak, nonatomic) NSString *algo;
 
 @end
 

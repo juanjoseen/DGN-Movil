@@ -13,5 +13,6 @@
 
 - (id)init;
 - (NSArray*) execSelect:(NSString *) query;
+- (BOOL) execQuery:(NSString *)query;
 
 @end

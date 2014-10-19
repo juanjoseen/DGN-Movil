@@ -64,6 +64,20 @@
     return ar;
 }
 
+- (BOOL) execQuery:(NSString *)query{
+    BOOL result = NO;
+    sqlite3_stmt *statement;
+    if (sqlite3_prepare_v2(NMXdb, [query UTF8String], -1, &statement, NULL) == SQLITE_OK){
+        sqlite3_step(statement);
+        result = YES;
+    }
+    else
+        NSLog(@"Error en el query: %@",query);
+    sqlite3_finalize(statement);
+    return result;
+    //sqlite3_close(db);
+}
+
 - (void)dealloc{
     sqlite3_close(NMXdb);
 }

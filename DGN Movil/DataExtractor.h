@@ -18,6 +18,9 @@
 - (NSMutableArray *)getAllNMX;
 - (NSMutableArray *)getAllNOM;
 
+- (NSMutableArray *)getTop10NMX;
+- (NSMutableArray *)getTop10NOM;
+
 - (Norma *)getNmxByKey:(NSString*)clave;
 - (Norma *)getNomByKey:(NSString*)clave;
 
