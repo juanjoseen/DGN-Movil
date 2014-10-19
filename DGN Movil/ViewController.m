@@ -48,9 +48,9 @@
     _menu.delegate = self;
     _menu.dataSource = self;
     
-    opciones = [NSArray arrayWithObjects:@"Búsqueda por Palabra", @"Búsqueda por Criterio", @"Favoritos", @"Contacto", @"Ayuda",nil];
-    iconos = [NSArray arrayWithObjects:[UIImage imageNamed:@"01BLateral01BPalabra"], [UIImage imageNamed:@"01BLateral02BCriterio"], [UIImage imageNamed:@"01BLateral03Favoritos"], [UIImage imageNamed:@"01BLateral04Contacto"], [UIImage imageNamed:@"01BLateral05Ayuda"], nil];
-    hIconos = [NSArray arrayWithObjects:[UIImage imageNamed:@"01BLateral01BPalabraA"], [UIImage imageNamed:@"01BLateral02BCriterioA"], [UIImage imageNamed:@"01BLateral03FavoritosA"], [UIImage imageNamed:@"01BLateral04ContactoA"], [UIImage imageNamed:@"01BLateral05AyudaA"], nil];
+    opciones = [NSArray arrayWithObjects:@"Búsqueda por Palabra", @"Búsqueda por Criterio", @"Trámites y Servicios", @"Favoritos", @"Ayuda", @"Acerca de",nil];
+    iconos = [NSArray arrayWithObjects:[UIImage imageNamed:@"01BLateral01BPalabra"], [UIImage imageNamed:@"01BLateral02BCriterio"], [UIImage imageNamed:@"01BLateral03Trámites"], [UIImage imageNamed:@"01BLateral03Favoritos"], [UIImage imageNamed:@"01BLateral05Ayuda"], [UIImage imageNamed:@"01BLateral06Acerca"],nil];
+    hIconos = [NSArray arrayWithObjects:[UIImage imageNamed:@"01BLateral01BPalabraA"], [UIImage imageNamed:@"01BLateral02BCriterioA"], [UIImage imageNamed:@"01BLateral03TrámitesA"], [UIImage imageNamed:@"01BLateral03FavoritosA"], [UIImage imageNamed:@"01BLateral05AyudaA"], [UIImage imageNamed:@"01BLateral06AcercaA"], nil];
     
     self.navigationController.navigationBar.hidden = YES;
 }
@@ -89,8 +89,14 @@
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event{
     
-    if (didTouchMenuSlider){
+    if (didMoveMenuSlider){
         [self showHideMenu];
+    } else if (didTouchMenuSlider){
+        if (isMenuShowed)
+            [self oculta];
+        else
+            [self muestra];
+        isMenuShowed = !isMenuShowed;
     }
     
     didMoveMenuSlider = NO;
@@ -163,7 +169,7 @@
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return 5;
+    return opciones.count;
 }
 
 - (UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{

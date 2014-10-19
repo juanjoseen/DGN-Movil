@@ -44,6 +44,10 @@
     return 2;
 }
 
+- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    return secciones[section];
+}
+
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     // Return the number of rows in the section.
     if (section == 0)
@@ -62,7 +66,7 @@
         cell.fecha.text = [dateformat stringFromDate:nmx.fecha];
         cell.descripcion.text = nmx.titulo;
     } else {
-        Norma *nom = _allNMX[indexPath.row];
+        Norma *nom = _allNOM[indexPath.row];
         cell.clave.text = nom.clave;
         cell.fecha.text = [dateformat stringFromDate:nom.fecha];
         cell.descripcion.text = nom.titulo;

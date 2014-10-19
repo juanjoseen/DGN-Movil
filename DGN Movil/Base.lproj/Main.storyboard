@@ -12,13 +12,17 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="00Portada" id="xfm-N4-z57">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="77" sectionHeaderHeight="22" sectionFooterHeight="22" id="vjb-5G-qzF">
                                 <rect key="frame" x="0.0" y="0.0" width="260" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" red="0.20000001789999999" green="0.20000001789999999" blue="0.20000001789999999" alpha="1" colorSpace="deviceRGB"/>
                                 <color key="sectionIndexTrackingBackgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <imageView key="tableHeaderView" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="01BLateral00NOM" id="WgM-Vt-n6S">
+                                <imageView key="tableHeaderView" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="01BLateral00Logo" id="WgM-Vt-n6S">
                                     <rect key="frame" x="0.0" y="64" width="260" height="93"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
@@ -31,7 +35,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="aHz-GJ-WSF">
-                                                    <rect key="frame" x="8" y="8" width="321" height="138"/>
+                                                    <rect key="frame" x="8" y="8" width="581" height="215"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vj6-yt-ygN">
@@ -51,9 +55,10 @@
                                 </prototypes>
                                 <sections/>
                             </tableView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="boton" id="lig-Xk-r8B">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="02BSuperior01DeslizarA" id="lig-Xk-r8B">
                                 <rect key="frame" x="260" y="424" width="60" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
+                                <color key="backgroundColor" red="0.01176470588" green="0.36470588240000001" blue="0.019607843140000001" alpha="1" colorSpace="calibratedRGB"/>
                             </imageView>
                             <button hidden="YES" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="aF3-WY-iG9">
                                 <rect key="frame" x="100" y="98" width="46" height="30"/>
@@ -82,7 +87,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="lLb-ab-6zP" kind="push" identifier="segue2" id="aFK-W9-r7b"/>
+                                    <segue destination="lLb-ab-6zP" kind="push" identifier="segue3" id="aFK-W9-r7b"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -213,7 +218,9 @@
                             <outlet property="delegate" destination="RpL-gg-Obi" id="B0t-OR-bro"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Búsqueda por Palabra" id="Vjy-2q-NuJ"/>
+                    <navigationItem key="navigationItem" title="Búsqueda por Palabra" id="Vjy-2q-NuJ">
+                        <barButtonItem key="backBarButtonItem" title=" " id="xuQ-GL-T5N"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="searchBar" destination="tZ9-kf-RDn" id="YCY-Pm-Qrm"/>
                     </connections>
@@ -291,7 +298,7 @@
                                 <rect key="frame" x="0.0" y="305" width="320" height="30"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <state key="normal" title=" + Rama de actividad Económica">
+                                <state key="normal" title=" + Rama de Actividad Económica">
                                     <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -361,7 +368,9 @@
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Busqueda por Criterio" id="Bud-G6-zWt"/>
+                    <navigationItem key="navigationItem" title="Busqueda por Criterio" id="Bud-G6-zWt">
+                        <barButtonItem key="backBarButtonItem" title=" " id="ahT-IJ-NJT"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="definitiva" destination="dMK-IO-QYm" id="VaF-pO-Ncy"/>
                         <outlet property="txtClave" destination="gFk-pF-cAE" id="QDS-Pg-wha"/>
@@ -638,9 +647,10 @@
         </scene>
     </scenes>
     <resources>
-        <image name="01BLateral00NOM" width="259" height="93"/>
-        <image name="02BSuperior02Atrás" width="50" height="50"/>
-        <image name="boton" width="60" height="60"/>
+        <image name="00Portada" width="320" height="480"/>
+        <image name="01BLateral00Logo" width="260" height="93"/>
+        <image name="02BSuperior01DeslizarA" width="50" height="50"/>
+        <image name="02BSuperior02Atrás" width="44" height="44"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>

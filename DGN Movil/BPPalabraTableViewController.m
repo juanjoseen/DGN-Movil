@@ -30,6 +30,11 @@
     BOOL cargo;
     
     Norma *selected;
+    
+    NSTimer *timer;
+    UIActivityIndicatorView *activity;
+    
+    BOOL isLoading;
 }
 
 /*
@@ -39,9 +44,28 @@
     //[self.tableView setContentOffset:CGPointZero animated:NO];
 }
 // */
+
+- (void)loading{
+    if (!isLoading){
+        [activity stopAnimating];
+    } else {
+        [activity startAnimating];
+    }
+}
+
 - (void)viewDidAppear:(BOOL)animated{
     UINavigationBar *navBar = self.navigationController.navigationBar;
     navBar.hidden = NO;
+    activity = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(CGRectGetMidX(self.view.frame)-15.0, CGRectGetMidY(self.view.frame)-15.0, 30.0, 30.0)];
+    activity.hidesWhenStopped = NO;
+    timer = [NSTimer scheduledTimerWithTimeInterval:1.0/2.0 target:self selector:@selector(loading) userInfo:nil repeats:YES];
+    isLoading = YES;
+    DataExtractor *data = [[DataExtractor alloc] init];
+    allNMX = [data getAllNMX];
+    allNOM = [data getAllNOM];
+    isLoading = NO;
+    
+    
     //navBar.frame = CGRectMake(0, -navBar.frame.size.height, navBar.frame.size.width, navBar.frame.size.height);
     //[UIView animateWithDuration:0.1 animations:^{
     //    navBar.frame = CGRectMake(0, 0, navBar.frame.size.width, navBar.frame.size.height);
@@ -68,6 +92,7 @@
 - (void)viewWillDisappear:(BOOL)animated{
     [super viewWillDisappear:animated];
     self.navigationController.navigationBar.hidden = NO;
+    
 }
 
 - (void)viewDidLoad {
@@ -83,25 +108,31 @@
     
     //self.navigationController.navigationBar.hidden = NO;
     
+    self.navigationController.navigationBar.hidden = NO;
+    
     UINavigationBar *navBar = self.navigationController.navigationBar;
     navBar.barTintColor = [UIColor colorWithRed:3.0/255.0 green:93.0/255.0 blue:5.0/255.0 alpha:1.0];
     navBar.tintColor = [UIColor whiteColor];
     navBar.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor whiteColor]};
+    
+    //[navBar setBackIndicatorImage:[UIImage imageNamed:@"02BSuperior02Atrás"]];
+    //[navBar setBackIndicatorTransitionMaskImage:[UIImage imageNamed:@"02BSuperior02Atrás"]];
     
     secciones = [NSArray arrayWithObjects:@"Top 10 NMX", @"Top 10 NOM", nil];
     DataExtractor *data = [[DataExtractor alloc] init];
     NMX = [data getTop10NMX];
     NOM = [data getTop10NOM];
     
+    /*
     allNMX = [data getAllNMX];
     allNOM = [data getAllNOM];
+    */
     
     sNMX = [NSMutableArray array];
     sNOM = [NSMutableArray array];
     
     self.searchBar.delegate = self;
     
-    self.navigationController.navigationBar.hidden = NO;
 }
 
 - (void)didReceiveMemoryWarning {

@@ -379,12 +379,12 @@
         }
     }
     
+    
     NSArray *res = [base execSelect:query2];
+    
     
     for (int i=0;i<res.count;i+=14){
         // Formateo de fecha
-        NSDateFormatter *dateformat=[[NSDateFormatter alloc]init];
-        [dateformat setDateFormat:@"YYYY-MM-DD"];
         
         NSDate *fechaVigor = nil;
         NSDate *fecha = nil;
@@ -424,6 +424,7 @@
         nom.documento           = documento;
         nom.conteo              = conteo;
         nom.favorito            = favorito;
+        
         
         // Si aun no se crea el arreglo se crea uno nuevo
         if (!all)
