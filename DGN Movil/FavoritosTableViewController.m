@@ -175,11 +175,6 @@
 }
 // */
 
-- (IBAction)favMark:(id)sender {
-    DataExtractor *data = [[DataExtractor alloc] init];
-    
-}
-
 - (BOOL)prefersStatusBarHidden{
     return  YES;
 }
