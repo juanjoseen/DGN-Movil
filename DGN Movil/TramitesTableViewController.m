@@ -1,30 +1,18 @@
 //
-//  FavoritosTableViewController.m
+//  TramitesTableViewController.m
 //  DGN Movil
 //
 //  Created by Juan on 19/10/14.
 //  Copyright (c) 2014 AxkanSoftware. All rights reserved.
 //
 
-#import "FavoritosTableViewController.h"
-#import "DataExtractor.h"
-#import "NormaTableViewCell.h"
-#import "DetailNormaViewController.h"
+#import "TramitesTableViewController.h"
 
-@interface FavoritosTableViewController ()
+@interface TramitesTableViewController ()
 
 @end
 
-@implementation FavoritosTableViewController{
-    NSArray *secciones;
-    
-    NSMutableArray *favNOMs;
-    NSMutableArray *favNMXs;
-    ///HOLA JUAN AL PARECER EL GITHUB SI SIRVE
-    NSDateFormatter *dateformat;
-    
-    Norma *selected;
-}
+@implementation TramitesTableViewController
 
 - (void)viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
@@ -35,14 +23,6 @@
     navBar.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor whiteColor]};
 }
 
-- (void)viewDidAppear:(BOOL)animated{
-    [super viewDidAppear:animated];
-    if (!favNOMs && !favNMXs){
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:@"Por ahora no tiene ninguna norma marcada como favorita, por favor marque algunas para poder acceder a esta seccion" delegate:nil cancelButtonTitle:@"Ok" otherButtonTitles: nil];
-        [alert show];
-    }
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -51,14 +31,6 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
-    secciones = @[@"NMX",@"NOM"];
-    DataExtractor *data = [[DataExtractor alloc] init];
-    favNMXs = [data getFavoritosNMX];
-    favNOMs = [data getFavoritosNOM];
-    
-    dateformat=[[NSDateFormatter alloc]init];
-    [dateformat setDateFormat:@"YYYY-MM-DD"];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -70,62 +42,24 @@
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // Return the number of sections.
-    return 2;
+    return 1;
 }
-
-- (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
-    return secciones[section];
-}
-
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    if (section == 0)
-        return favNMXs.count;
-    return favNOMs.count;
-}
-
-//*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NormaTableViewCell *cell = (NormaTableViewCell*)[tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
-    
-    // Configure the cell...
-    if (indexPath.section == 0){
-        Norma *nmx = favNMXs[indexPath.row];
-        cell.clave.text = nmx.clave;
-        cell.fecha.text = [dateformat stringFromDate:nmx.fecha];
-        cell.descripcion.text = nmx.titulo;
-        if (nmx.favorito){
-            cell.favorite.imageView.image = [UIImage imageNamed:@"01BLateral04FavoritosA"];
-            //NSString *sInt = [NSString stringWithFormat:@"1000%d",indexPath.row];
-            //cell.favorite.tag =
-        } else {
-            cell.favorite.imageView.image = [UIImage imageNamed:@"01BLateral04Favoritos"];
-        }
-    } else {
-        Norma *nom = favNOMs[indexPath.row];
-        cell.clave.text = nom.clave;
-        cell.fecha.text = [dateformat stringFromDate:nom.fecha];
-        cell.descripcion.text = nom.titulo;
-    }
-    
-    return cell;
-}
-
-- (void)tableView:(UITableView *)tableView didHighlightRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.section == 0){
-        selected = favNMXs[indexPath.row];
-    } else {
-        selected = favNOMs[indexPath.row];
-    }
+    return 0;
 }
 
 /*
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
     
+    // Configure the cell...
+    
+    return cell;
 }
 */
-// */
 
 /*
 // Override to support conditional editing of the table view.
@@ -161,24 +95,16 @@
 }
 */
 
-//*
+/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
-    if ([segue.identifier isEqualToString:@"toDetail"]){
-        DetailNormaViewController *dvc = (DetailNormaViewController *)segue.destinationViewController;
-        dvc.norma = selected;
-    }
 }
-// */
+*/
 
-- (IBAction)favMark:(id)sender {
-    DataExtractor *data = [[DataExtractor alloc] init];
-    
-}
 
 - (BOOL)prefersStatusBarHidden{
     return  YES;

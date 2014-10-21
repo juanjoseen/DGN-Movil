@@ -9,6 +9,7 @@
 #import "ViewController.h"
 #import "DataExtractor.h"
 #import "TableViewCell.h"
+#import "BPPalabraTableViewController.h"
 
 @interface ViewController ()
 
@@ -23,6 +24,11 @@
     NSArray *opciones;
     NSArray *iconos;
     NSArray *hIconos;
+    
+    NSMutableArray *allNMX;
+    NSMutableArray *allNOM;
+    
+    DataExtractor *data;
     
     CGFloat anchoOriginal;
 }
@@ -51,6 +57,11 @@
     opciones = [NSArray arrayWithObjects:@"Búsqueda por Palabra", @"Búsqueda por Criterio", @"Trámites y Servicios", @"Favoritos", @"Ayuda", @"Acerca de",nil];
     iconos = [NSArray arrayWithObjects:[UIImage imageNamed:@"01BLateral01BPalabra"], [UIImage imageNamed:@"01BLateral02BCriterio"], [UIImage imageNamed:@"01BLateral03Trámites"], [UIImage imageNamed:@"01BLateral03Favoritos"], [UIImage imageNamed:@"01BLateral05Ayuda"], [UIImage imageNamed:@"01BLateral06Acerca"],nil];
     hIconos = [NSArray arrayWithObjects:[UIImage imageNamed:@"01BLateral01BPalabraA"], [UIImage imageNamed:@"01BLateral02BCriterioA"], [UIImage imageNamed:@"01BLateral03TrámitesA"], [UIImage imageNamed:@"01BLateral03FavoritosA"], [UIImage imageNamed:@"01BLateral05AyudaA"], [UIImage imageNamed:@"01BLateral06AcercaA"], nil];
+    
+    data = [[DataExtractor alloc] init];
+    
+    allNMX = [data getAllNMX];
+    allNOM = [data getAllNOM];
     
     self.navigationController.navigationBar.hidden = YES;
 }
@@ -184,14 +195,14 @@
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.row < 3){
+    //if (indexPath.row < 4){
         //[UIView animateWithDuration:0.3 animations:^{
         //    _menu.frame = CGRectMake(0, 0, self.view.frame.size.width, _menu.frame.size.height);
         //}completion:^(BOOL finished){
             [self performSegueWithIdentifier:[NSString stringWithFormat:@"segue%d",indexPath.row] sender:self];
         //}];
         
-    }
+    //}
 }
 
 - (void)tableView:(UITableView *)tableView didHighlightRowAtIndexPath:(NSIndexPath *)indexPath{
@@ -211,6 +222,11 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
     //_menu.frame = CGRectMake(0, 0, anchoOriginal, _menu.frame.size.height);
+    if ([segue.identifier isEqualToString:@"segue0"]){
+        BPPalabraTableViewController *bppvc = (BPPalabraTableViewController*)segue.destinationViewController;
+        bppvc.allNMX = allNMX;
+        bppvc.allNOM = allNOM;
+    }
 }
 
 - (BOOL)prefersStatusBarHidden{

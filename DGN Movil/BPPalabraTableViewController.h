@@ -11,4 +11,7 @@
 @interface BPPalabraTableViewController : UITableViewController<UISearchBarDelegate>
 @property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
 
+@property (nonatomic, retain) NSMutableArray *allNMX;
+@property (nonatomic, retain) NSMutableArray *allNOM;
+
 @end

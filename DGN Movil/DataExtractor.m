@@ -72,12 +72,11 @@
     
     // Ejecucion de consulta a la base de datos
     NSArray *res = [base execSelect:@"SELECT * FROM NOM ORDER BY clave"];
-    
+    NSDateFormatter *dateformat=[[NSDateFormatter alloc]init];
+    [dateformat setDateFormat:@"YYYY-MM-DD"];
     // Recorrido de los campos obtenidos de la consulta
     for (int i=0;i<res.count;i+=14){
         // Formateo de fecha
-        NSDateFormatter *dateformat=[[NSDateFormatter alloc]init];
-        [dateformat setDateFormat:@"YYYY-MM-DD"];
         
         NSDate *fechaVigor = nil;
         
@@ -545,7 +544,9 @@
     NSString * val = @"0";
     if (favorito)
         val = @"1";
-    return [base execQuery:[NSString stringWithFormat:@"UPDATE NMX SET favorito=%@ WHERE clave='%@'",val,norma.clave]];
+    NSString *query = [NSString stringWithFormat:@"UPDATE NMX SET favorito = %@ WHERE clave = '%@'",val,norma.clave];
+    NSLog(@"query: %@",query);
+    return [base execQuery:query];
 }
 
 - (BOOL)setFavorito:(BOOL)favorito aNOM:(Norma *)norma{
@@ -557,12 +558,79 @@
 }
 
 - (Norma *)getNmxByKey:(NSString *)clave{
-    Norma *nmx = nil;
+    NSDateFormatter *dateformat=[[NSDateFormatter alloc]init];
+    [dateformat setDateFormat:@"YYYY-MM-DD"];
+    NSArray *res = [base execSelect:[NSString stringWithFormat:@"SELECT * FROM NMX WHERE clave='%@'",clave]];
+    int i=0;
+    NSString *clav         = [res objectAtIndex:i];
+    NSString *titulo        = [res objectAtIndex:i+1];
+    NSString *publicacion   = [res objectAtIndex:i+2];
+    NSString *tipoNorma     = [res objectAtIndex:i+3];
+    NSString *producto      = [res objectAtIndex:i+4];
+    NSString *RAE           = [res objectAtIndex:i+5];
+    NSString *CTNN          = [res objectAtIndex:i+6];
+    NSString *ONN           = [res objectAtIndex:i+7];
+    NSString *documento     = [res objectAtIndex:i+8];
+    NSString *conteo        = [res objectAtIndex:i+9];
+    BOOL favorito           = [[res objectAtIndex:i+10] isEqualToString:@"1"];
+    NSDate *fecha           = [dateformat dateFromString:[publicacion substringToIndex:10]];
+    
+    // Agrupacion de datos en una sola entidad
+    Norma *nmx = [[Norma alloc] initWithKey:clav];
+    nmx.titulo      = titulo;
+    nmx.fecha       = fecha;
+    nmx.tipoNorma   = tipoNorma;
+    nmx.producto    = producto;
+    nmx.RAE         = RAE;
+    nmx.CTNN        = CTNN;
+    nmx.ONN         = ONN;
+    nmx.documento   = documento;
+    nmx.conteo      = conteo;
+    nmx.favorito    = favorito;
     return nmx;
 }
 
 - (Norma *)getNomByKey:(NSString *)clave{
-    Norma *nom = nil;
+    NSDateFormatter *dateformat=[[NSDateFormatter alloc]init];
+    [dateformat setDateFormat:@"YYYY-MM-DD"];
+    NSArray *res = [base execSelect:[NSString stringWithFormat:@"SELECT * FROM NOM WHERE clave='%@'",clave]];
+    int i=0;
+    NSDate *fechaVigor = nil;
+    
+    NSString *clav         = [res objectAtIndex:i];
+    NSString *titulo        = [res objectAtIndex:i+1];
+    NSString *publicacion   = [res objectAtIndex:i+2];
+    NSString *entrada       = [res objectAtIndex:i+3];
+    NSString *tipoNorma     = [res objectAtIndex:i+4];
+    NSString *internacional = [res objectAtIndex:i+5];
+    NSString *producto      = [res objectAtIndex:i+6];
+    NSString *concordancia  = [res objectAtIndex:i+7];
+    NSString *RAE           = [res objectAtIndex:i+8];
+    NSString *dependencia   = [res objectAtIndex:i+9];
+    NSString *CCNN          = [res objectAtIndex:i+10];
+    NSString *documento     = [res objectAtIndex:i+11];
+    NSString *conteo        = [res objectAtIndex:i+12];
+    BOOL favorito           = [[res objectAtIndex:i+13] isEqualToString:@"1"];
+    NSDate *fecha           = [dateformat dateFromString:[publicacion substringToIndex:10]];
+    if (entrada && entrada.length>8)
+        fechaVigor          = [dateformat dateFromString:[entrada substringToIndex:10]];
+    
+    // Agrupacion de datos en una sola entidad
+    Norma *nom = [[Norma alloc] initWithKey:clav];
+    nom.titulo              = titulo;
+    nom.fecha               = fecha;
+    if (fechaVigor)
+        nom.fechaEntrada    = fechaVigor;
+    nom.tipoNorma           = tipoNorma;
+    nom.normaInternacional  = internacional;
+    nom.producto            = producto;
+    nom.concordancia        = concordancia;
+    nom.RAE                 = RAE;
+    nom.dependencia         = dependencia;
+    nom.CCNN                = CCNN;
+    nom.documento           = documento;
+    nom.conteo              = conteo;
+    nom.favorito            = favorito;
     return nom;
 }
 

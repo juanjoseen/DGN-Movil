@@ -11,18 +11,19 @@
 #import "NormaTableViewCell.h"
 #import "DetailNormaViewController.h"
 
+NSString *favorita = @"EstrellaChica";
+NSString *noFavorita = @"01BLateral04FavoritosA";
+
 @interface BPPalabraTableViewController ()
 
 @end
 
 @implementation BPPalabraTableViewController{
+    NSArray *sSecciones;
     NSArray *secciones;
     BOOL isSearching;
     NSMutableArray *NMX;
     NSMutableArray *NOM;
-    
-    NSMutableArray *allNMX;
-    NSMutableArray *allNOM;
     
     NSMutableArray *sNMX;
     NSMutableArray *sNOM;
@@ -31,10 +32,6 @@
     
     Norma *selected;
     
-    NSTimer *timer;
-    UIActivityIndicatorView *activity;
-    
-    BOOL isLoading;
 }
 
 /*
@@ -45,26 +42,10 @@
 }
 // */
 
-- (void)loading{
-    if (!isLoading){
-        [activity stopAnimating];
-    } else {
-        [activity startAnimating];
-    }
-}
 
 - (void)viewDidAppear:(BOOL)animated{
     UINavigationBar *navBar = self.navigationController.navigationBar;
     navBar.hidden = NO;
-    activity = [[UIActivityIndicatorView alloc] initWithFrame:CGRectMake(CGRectGetMidX(self.view.frame)-15.0, CGRectGetMidY(self.view.frame)-15.0, 30.0, 30.0)];
-    activity.hidesWhenStopped = NO;
-    timer = [NSTimer scheduledTimerWithTimeInterval:1.0/2.0 target:self selector:@selector(loading) userInfo:nil repeats:YES];
-    isLoading = YES;
-    DataExtractor *data = [[DataExtractor alloc] init];
-    allNMX = [data getAllNMX];
-    allNOM = [data getAllNOM];
-    isLoading = NO;
-    
     
     //navBar.frame = CGRectMake(0, -navBar.frame.size.height, navBar.frame.size.width, navBar.frame.size.height);
     //[UIView animateWithDuration:0.1 animations:^{
@@ -118,15 +99,19 @@
     //[navBar setBackIndicatorImage:[UIImage imageNamed:@"02BSuperior02Atrás"]];
     //[navBar setBackIndicatorTransitionMaskImage:[UIImage imageNamed:@"02BSuperior02Atrás"]];
     
-    secciones = [NSArray arrayWithObjects:@"Top 10 NMX", @"Top 10 NOM", nil];
+    secciones = @[@"Top 10 NMX", @"Top 10 NOM"];
+    sSecciones = @[@"NMX",@"NOM"];
     DataExtractor *data = [[DataExtractor alloc] init];
     NMX = [data getTop10NMX];
     NOM = [data getTop10NOM];
+    
     
     /*
     allNMX = [data getAllNMX];
     allNOM = [data getAllNOM];
     */
+    
+    //NSLog(@"allNOM : %d",_allNOM.count);
     
     sNMX = [NSMutableArray array];
     sNOM = [NSMutableArray array];
@@ -148,6 +133,8 @@
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    if (isSearching)
+        return sSecciones[section];
     return secciones[section];
 }
 
@@ -175,11 +162,40 @@
             cell.clave.text = nmx.clave;
             cell.fecha.text = [dateformat stringFromDate:nmx.fecha];
             cell.descripcion.text = nmx.titulo;
+            /*
+            UIButton *fav = [UIButton buttonWithType:UIButtonTypeCustom];
+            fav.frame = CGRectMake(0, 0, 30, 30);
+            
+            [fav addTarget:self action:@selector(favMark:) forControlEvents:UIControlEventTouchUpInside];
+            
+            if (nmx.favorito)
+                [fav setImage:[UIImage imageNamed:favorita] forState:UIControlStateNormal];
+            else
+                [fav setImage:[UIImage imageNamed:noFavorita] forState:UIControlStateNormal];
+            cell.accessoryView = fav;
+            */
         } else if (indexPath.section == 1){
             Norma *nom = NOM[indexPath.row];
             cell.clave.text = nom.clave;
             cell.fecha.text = [dateformat stringFromDate:nom.fechaEntrada];
             cell.descripcion.text = nom.titulo;
+            /*
+            UIButton *fav = [UIButton buttonWithType:UIButtonTypeCustom];
+            fav.frame = CGRectMake(0, 0, 30, 30);
+            
+            [fav addTarget:self action:@selector(favMark:) forControlEvents:UIControlEventTouchUpInside];
+            
+            if (nom.favorito)
+                [fav setImage:[UIImage imageNamed:favorita] forState:UIControlStateNormal];
+            else
+                [fav setImage:[UIImage imageNamed:noFavorita] forState:UIControlStateNormal];
+            cell.accessoryView = fav;
+            
+            if (nom.favorito){
+                [cell.favorite setImage:[UIImage imageNamed:@"01BLateral04FavoritosA"] forState:UIControlStateNormal];
+            } else {
+                [cell.favorite setImage:[UIImage imageNamed:@"01BLateral04Favoritos"] forState:UIControlStateNormal];
+            }*/
         }
     } else {
         if (indexPath.section == 0){
@@ -187,11 +203,46 @@
             cell.clave.text = nmx.clave;
             cell.fecha.text = [dateformat stringFromDate:nmx.fecha];
             cell.descripcion.text = nmx.titulo;
+            /*
+            UIButton *fav = [UIButton buttonWithType:UIButtonTypeCustom];
+            fav.frame = CGRectMake(0, 0, 30, 30);
+            
+            [fav addTarget:self action:@selector(favMark:) forControlEvents:UIControlEventTouchUpInside];
+            
+            if (nmx.favorito)
+                [fav setImage:[UIImage imageNamed:favorita] forState:UIControlStateNormal];
+            else
+                [fav setImage:[UIImage imageNamed:noFavorita] forState:UIControlStateNormal];
+            cell.accessoryView = fav;
+            *
+            if (nmx.favorito){
+                [cell.favorite setImage:[UIImage imageNamed:@"01BLateral04FavoritosA"] forState:UIControlStateNormal];
+            } else {
+                [cell.favorite setImage:[UIImage imageNamed:@"01BLateral04Favoritos"] forState:UIControlStateNormal];
+            }*/
         } else if (indexPath.section == 1){
             Norma *nom = sNOM[indexPath.row];
             cell.clave.text = nom.clave;
             cell.fecha.text = [dateformat stringFromDate:nom.fechaEntrada];
             cell.descripcion.text = nom.titulo;
+            
+            /*
+            UIButton *fav = [UIButton buttonWithType:UIButtonTypeCustom];
+            fav.frame = CGRectMake(0, 0, 30, 30);
+            
+            [fav addTarget:self action:@selector(favMark:) forControlEvents:UIControlEventTouchUpInside];
+            
+            if (nom.favorito)
+                [fav setImage:[UIImage imageNamed:favorita] forState:UIControlStateNormal];
+            else
+                [fav setImage:[UIImage imageNamed:noFavorita] forState:UIControlStateNormal];
+            cell.accessoryView = fav;
+            *
+            if (nom.favorito){
+                [cell.favorite setImage:[UIImage imageNamed:@"01BLateral04FavoritosA"] forState:UIControlStateNormal];
+            } else {
+                [cell.favorite setImage:[UIImage imageNamed:@"01BLateral04Favoritos"] forState:UIControlStateNormal];
+            }*/
         }
     }
     
@@ -199,6 +250,27 @@
 }
 //*/
 
+/*
+- (void)favMark:(id)sender{
+    UIButton *b = (UIButton*)sender;
+    NormaTableViewCell *cell = (NormaTableViewCell *)[b superview];
+    DataExtractor *data = [[DataExtractor alloc] init];
+    if ([cell.clave.text containsString:@"NMX"]){
+        Norma *nmx = [data getNmxByKey:cell.clave.text];
+        [data setFavorito:!nmx.favorito aNMX:nmx];
+        UIButton *fav = (UIButton*)cell.accessoryView;
+        if (nmx.favorito)
+            [fav setImage:[UIImage imageNamed:favorita] forState:UIControlStateNormal];
+        else
+            [fav setImage:[UIImage imageNamed:noFavorita] forState:UIControlStateNormal];
+    } else {
+        Norma *nom = [data getNomByKey:cell.clave.text];
+        [data setFavorito:!nom.favorito aNOM:nom];
+    }
+    //[self.tableView reloadData];
+    [self.tableView reloadInputViews];
+}
+*/
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [self.searchBar resignFirstResponder];
 }
@@ -215,7 +287,7 @@
         else
             selected = NOM[indexPath.row];
     }
-    NSLog(@"Highlight norma %@",selected.clave);
+    //NSLog(@"Highlight norma %@",selected.clave);
 }
 
 /*
@@ -272,40 +344,42 @@
 }
 
 - (void)searchBar:(UISearchBar *)searchBar textDidChange:(NSString *)searchText{
-    isSearching = YES;
+    isSearching = NO;
     [searchBar setShowsCancelButton:YES animated:YES];
     [sNMX removeAllObjects];
     [sNOM removeAllObjects];
-    
-    for (Norma *norma in allNMX){
-        NSRange rClave = [norma.clave rangeOfString:searchText options:NSCaseInsensitiveSearch];
-        NSRange rTitulo = [norma.titulo rangeOfString:searchText options:NSCaseInsensitiveSearch];
-        NSRange rTipo = [norma.tipoNorma rangeOfString:searchText options:NSCaseInsensitiveSearch];
-        NSRange rProd = [norma.producto rangeOfString:searchText options:NSCaseInsensitiveSearch];
-        NSRange rae = [norma.RAE rangeOfString:searchText options:NSCaseInsensitiveSearch];
-        NSRange rCtnn = [norma.CTNN rangeOfString:searchText options:NSCaseInsensitiveSearch];
-        NSRange rOnn = [norma.ONN rangeOfString:searchText options:NSCaseInsensitiveSearch];
-        
-        if (rClave.location != NSNotFound || rTitulo.location != NSNotFound || rTipo.location != NSNotFound || rProd.location != NSNotFound || rae.location != NSNotFound || rCtnn.location != NSNotFound || rOnn.location != NSNotFound){
+    if (searchText.length > 0){
+        isSearching = YES;
+        for (Norma *norma in self.allNMX){
+            NSRange rClave = [norma.clave rangeOfString:searchText options:NSCaseInsensitiveSearch];
+            NSRange rTitulo = [norma.titulo rangeOfString:searchText options:NSCaseInsensitiveSearch];
+            NSRange rTipo = [norma.tipoNorma rangeOfString:searchText options:NSCaseInsensitiveSearch];
+            NSRange rProd = [norma.producto rangeOfString:searchText options:NSCaseInsensitiveSearch];
+            NSRange rae = [norma.RAE rangeOfString:searchText options:NSCaseInsensitiveSearch];
+            NSRange rCtnn = [norma.CTNN rangeOfString:searchText options:NSCaseInsensitiveSearch];
+            NSRange rOnn = [norma.ONN rangeOfString:searchText options:NSCaseInsensitiveSearch];
             
-            [sNMX addObject:norma];
+            if (rClave.location != NSNotFound || rTitulo.location != NSNotFound || rTipo.location != NSNotFound || rProd.location != NSNotFound || rae.location != NSNotFound || rCtnn.location != NSNotFound || rOnn.location != NSNotFound){
+                
+                [sNMX addObject:norma];
+            }
         }
-    }
-    
-    for (Norma *norma in allNOM){
-        NSRange rClave = [norma.clave rangeOfString:searchText options:NSCaseInsensitiveSearch];
-        NSRange rTitulo = [norma.titulo rangeOfString:searchText options:NSCaseInsensitiveSearch];
-        NSRange rTipo = [norma.tipoNorma rangeOfString:searchText options:NSCaseInsensitiveSearch];
-        NSRange rInter = [norma.normaInternacional rangeOfString:searchText options:NSCaseInsensitiveSearch];
-        NSRange rProd = [norma.producto rangeOfString:searchText options:NSCaseInsensitiveSearch];
-        NSRange rConc = [norma.concordancia rangeOfString:searchText options:NSCaseInsensitiveSearch];
-        NSRange rRae = [norma.RAE rangeOfString:searchText options:NSCaseInsensitiveSearch];
-        NSRange rDep = [norma.dependencia rangeOfString:searchText options:NSCaseInsensitiveSearch];
-        NSRange rCcnn = [norma.CCNN rangeOfString:searchText options:NSCaseInsensitiveSearch];
         
-        if (rClave.location != NSNotFound || rTitulo.location != NSNotFound || rTipo.location != NSNotFound|| rInter.location != NSNotFound|| rProd.location != NSNotFound || rConc.location != NSNotFound || rDep.location != NSNotFound|| rProd.location != NSNotFound || rRae.location != NSNotFound || rCcnn.location != NSNotFound){
+        for (Norma *norma in self.allNOM){
+            NSRange rClave = [norma.clave rangeOfString:searchText options:NSCaseInsensitiveSearch];
+            NSRange rTitulo = [norma.titulo rangeOfString:searchText options:NSCaseInsensitiveSearch];
+            NSRange rTipo = [norma.tipoNorma rangeOfString:searchText options:NSCaseInsensitiveSearch];
+            NSRange rInter = [norma.normaInternacional rangeOfString:searchText options:NSCaseInsensitiveSearch];
+            NSRange rProd = [norma.producto rangeOfString:searchText options:NSCaseInsensitiveSearch];
+            NSRange rConc = [norma.concordancia rangeOfString:searchText options:NSCaseInsensitiveSearch];
+            NSRange rRae = [norma.RAE rangeOfString:searchText options:NSCaseInsensitiveSearch];
+            NSRange rDep = [norma.dependencia rangeOfString:searchText options:NSCaseInsensitiveSearch];
+            NSRange rCcnn = [norma.CCNN rangeOfString:searchText options:NSCaseInsensitiveSearch];
             
-            [sNOM addObject:norma];
+            if (rClave.location != NSNotFound || rTitulo.location != NSNotFound || rTipo.location != NSNotFound|| rInter.location != NSNotFound|| rProd.location != NSNotFound || rConc.location != NSNotFound || rDep.location != NSNotFound|| rProd.location != NSNotFound || rRae.location != NSNotFound || rCcnn.location != NSNotFound){
+                
+                [sNOM addObject:norma];
+            }
         }
     }
     

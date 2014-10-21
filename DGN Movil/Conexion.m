@@ -11,6 +11,8 @@
 @implementation Conexion{
     NSString *nmxPath;
     sqlite3 *NMXdb;
+    sqlite3 *bd;
+    
 }
 
 + (NSString*)getPathOf:(NSString*)db{
@@ -21,17 +23,45 @@
 
 - (id)init{
     if (self = [super init]){
-        nmxPath = [Conexion getPathOf:@"catanmx"];
+        [self inicia];
+        NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+        NSString *docsDir = [paths objectAtIndex:0];
+        nmxPath = [docsDir stringByAppendingPathComponent:@"base.sql"];
         NMXdb = [self iniDB:nmxPath];
     }
     return self;
 }
 
+- (void)inicia {
+    NSFileManager *fileManager = [NSFileManager defaultManager];
+    NSError *error;
+    NSArray *paths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+    NSString *docsDir = [paths objectAtIndex:0];
+    
+    NSString *writableDBPath = [docsDir stringByAppendingPathComponent:@"base.sql"];
+    
+    BOOL success = [fileManager fileExistsAtPath:writableDBPath];
+    
+    if (!success) {
+        NSLog(@"Se copiara la base");
+        NSString *defaultDBPath = [Conexion getPathOf:@"catanmx"];
+        success = [fileManager copyItemAtPath:defaultDBPath toPath:writableDBPath error:&error];
+        
+        if (!success){
+            NSLog(@"error al copiar la BD");
+        } else {
+            nmxPath = writableDBPath;
+        }
+    }
+    
+}
+
+
 - (sqlite3 *)iniDB:(NSString*)databasePath{
     
     sqlite3 *db;
     NSFileManager *filemgr = [NSFileManager defaultManager];
-    
+    NSLog(@"dbPath: %@",databasePath);
     if ([filemgr fileExistsAtPath:databasePath] == YES){
         const char *dbpath = [databasePath UTF8String];
         if (sqlite3_open(dbpath, &db) != SQLITE_OK){

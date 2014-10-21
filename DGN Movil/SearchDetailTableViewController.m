@@ -9,6 +9,7 @@
 #import "SearchDetailTableViewController.h"
 #import "NormaTableViewCell.h"
 #import "Norma.h"
+#import "DetailNormaViewController.h"
 
 @interface SearchDetailTableViewController ()
 
@@ -17,6 +18,8 @@
 @implementation SearchDetailTableViewController{
     NSArray *secciones;
     NSDateFormatter *dateformat;
+    
+    Norma *selected;
 }
 
 - (void)viewDidLoad {
@@ -110,15 +113,28 @@
 }
 */
 
-/*
+- (void)tableView:(UITableView *)tableView didHighlightRowAtIndexPath:(NSIndexPath *)indexPath{
+    if (indexPath.section == 0){
+        selected = _allNMX[indexPath.row];
+    } else {
+        selected = _allNOM[indexPath.row];
+    }
+}
+
+//*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"toDetail"]){
+        DetailNormaViewController *dvc = (DetailNormaViewController *)segue.destinationViewController;
+        dvc.norma = selected;
+    }
+    
 }
-*/
+//*/
 
 
 - (BOOL)prefersStatusBarHidden{

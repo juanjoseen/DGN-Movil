@@ -13,4 +13,5 @@
 @property (weak, nonatomic) IBOutlet UILabel *clave;
 @property (weak, nonatomic) IBOutlet UILabel *fecha;
 @property (weak, nonatomic) IBOutlet UILabel *descripcion;
+@property (weak, nonatomic) IBOutlet UIButton *favorite;
 @end

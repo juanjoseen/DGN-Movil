@@ -14,6 +14,7 @@
 @property (nonatomic, retain) Norma *norma;
 
 @property (strong, nonatomic) IBOutlet UIScrollView *scroller;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *favIcon;
 
 - (void)btnSelected;
 @end
