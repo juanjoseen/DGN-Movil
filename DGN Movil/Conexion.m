@@ -43,7 +43,7 @@
     BOOL success = [fileManager fileExistsAtPath:writableDBPath];
     
     if (!success) {
-        NSLog(@"Se copiara la base");
+        //NSLog(@"Se copiara la base");
         NSString *defaultDBPath = [Conexion getPathOf:@"catanmx"];
         success = [fileManager copyItemAtPath:defaultDBPath toPath:writableDBPath error:&error];
         
@@ -61,7 +61,7 @@
     
     sqlite3 *db;
     NSFileManager *filemgr = [NSFileManager defaultManager];
-    NSLog(@"dbPath: %@",databasePath);
+    //NSLog(@"dbPath: %@",databasePath);
     if ([filemgr fileExistsAtPath:databasePath] == YES){
         const char *dbpath = [databasePath UTF8String];
         if (sqlite3_open(dbpath, &db) != SQLITE_OK){

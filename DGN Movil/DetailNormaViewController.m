@@ -13,7 +13,9 @@
 
 @end
 
-@implementation DetailNormaViewController
+@implementation DetailNormaViewController{
+    DataExtractor *data;
+}
 
 
 - (void)viewWillAppear:(BOOL)animated{
@@ -25,7 +27,7 @@
         _favIcon.image = [UIImage imageNamed:@"EstrellaMedianaA"];
     }
     
-    NSLog(@"alto: %lf",navBar.frame.size.height);
+    //NSLog(@"alto: %lf",navBar.frame.size.height);
     [self setTitle:_norma.clave ];
     
     _scroller = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height)];
@@ -215,8 +217,14 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    
+    data = [[DataExtractor alloc] init];
     //NSLog(@"llego norma con clave: %@", _norma.clave);
+    if (_norma.dependencia && _norma.dependencia.length > 0){
+        [data incNOM:_norma];
+    } else {
+        [data incNMX:_norma];
+    }
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -235,13 +243,10 @@
  */
 
 - (IBAction)changeFav:(id)sender {
-    NSLog(@"caso");
-    DataExtractor *data = [[DataExtractor alloc] init];
+    //NSLog(@"caso");
     if ([_norma.clave containsString:@"NMX"]){
-        if ([data setFavorito:!_norma.favorito aNMX:_norma]){
-            NSLog(@"se supone cambio");
-        } else {
-            NSLog(@"algo pasa");
+        if (![data setFavorito:!_norma.favorito aNMX:_norma]){
+            NSLog(@"Error al cambiar favorito");
         }
     } else {
         [data setFavorito:!_norma.favorito aNOM:_norma];
