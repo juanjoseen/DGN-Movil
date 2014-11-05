@@ -29,6 +29,8 @@ NSString *noFavorita = @"01BLateral04FavoritosA";
     NSMutableArray *sNOM;
     
     BOOL cargo;
+    BOOL hayNMX;
+    BOOL hayNOM;
     
     Norma *selected;
     
@@ -71,8 +73,9 @@ NSString *noFavorita = @"01BLateral04FavoritosA";
     
 }
 - (void)viewWillDisappear:(BOOL)animated{
-    [super viewWillDisappear:animated];
     self.navigationController.navigationBar.hidden = NO;
+    //[self.searchBar endEditing:YES];
+    [super viewWillDisappear:animated];
     
 }
 
@@ -117,6 +120,10 @@ NSString *noFavorita = @"01BLateral04FavoritosA";
     sNOM = [NSMutableArray array];
     
     self.searchBar.delegate = self;
+    UITextField *textField = [self.searchBar valueForKey:@"_searchField"];
+    textField.clearButtonMode = UITextFieldViewModeNever;
+    hayNMX = YES;
+    hayNOM = YES;
     
 }
 
@@ -130,6 +137,15 @@ NSString *noFavorita = @"01BLateral04FavoritosA";
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // Return the number of sections.
     return 2;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section{
+    if (section == 0 && !hayNMX) {
+        return @"No se encontraron NMX";
+    } else if (section == 1 && !hayNOM){
+        return @"No se encontraron NOM";
+    }
+    return nil;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
@@ -348,6 +364,8 @@ NSString *noFavorita = @"01BLateral04FavoritosA";
     [searchBar setShowsCancelButton:YES animated:YES];
     [sNMX removeAllObjects];
     [sNOM removeAllObjects];
+    hayNMX = YES;
+    hayNOM = YES;
     if (searchText.length > 0){
         isSearching = YES;
         for (Norma *norma in self.allNMX){
@@ -364,7 +382,7 @@ NSString *noFavorita = @"01BLateral04FavoritosA";
                 [sNMX addObject:norma];
             }
         }
-        
+        hayNMX = (sNMX.count > 0);
         for (Norma *norma in self.allNOM){
             NSRange rClave = [norma.clave rangeOfString:searchText options:NSCaseInsensitiveSearch];
             NSRange rTitulo = [norma.titulo rangeOfString:searchText options:NSCaseInsensitiveSearch];
@@ -381,6 +399,7 @@ NSString *noFavorita = @"01BLateral04FavoritosA";
                 [sNOM addObject:norma];
             }
         }
+        hayNOM = (sNOM.count > 0);
     }
     
     [self.tableView reloadData];

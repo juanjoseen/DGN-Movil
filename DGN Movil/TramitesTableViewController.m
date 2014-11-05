@@ -21,6 +21,7 @@
     navBar.barTintColor = [UIColor colorWithRed:3.0/255.0 green:93.0/255.0 blue:5.0/255.0 alpha:1.0];
     navBar.tintColor = [UIColor whiteColor];
     navBar.titleTextAttributes = @{NSForegroundColorAttributeName : [UIColor whiteColor]};
+    
 }
 
 - (void)viewDidLoad {

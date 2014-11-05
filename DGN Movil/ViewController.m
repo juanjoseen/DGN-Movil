@@ -7,9 +7,9 @@
 //
 
 #import "ViewController.h"
-#import "DataExtractor.h"
 #import "TableViewCell.h"
 #import "BPPalabraTableViewController.h"
+#import "DetailNormaViewController.h"
 
 @interface ViewController ()
 
@@ -199,7 +199,7 @@
         //[UIView animateWithDuration:0.3 animations:^{
         //    _menu.frame = CGRectMake(0, 0, self.view.frame.size.width, _menu.frame.size.height);
         //}completion:^(BOOL finished){
-            [self performSegueWithIdentifier:[NSString stringWithFormat:@"segue%d",indexPath.row] sender:self];
+            [self performSegueWithIdentifier:[NSString stringWithFormat:@"segue%ld",(long)indexPath.row] sender:self];
         //}];
         
     //}
@@ -226,6 +226,9 @@
         BPPalabraTableViewController *bppvc = (BPPalabraTableViewController*)segue.destinationViewController;
         bppvc.allNMX = allNMX;
         bppvc.allNOM = allNOM;
+    } else if ([segue.identifier isEqualToString:@"directSegue"]){
+        DetailNormaViewController *dnvc = (DetailNormaViewController *)segue.destinationViewController;
+        dnvc.norma = _defaultNorma;
     }
 }
 

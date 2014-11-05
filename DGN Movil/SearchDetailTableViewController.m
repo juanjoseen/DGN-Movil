@@ -20,6 +20,9 @@
     NSDateFormatter *dateformat;
     
     Norma *selected;
+    
+    BOOL hayNMX;
+    BOOL hayNOM;
 }
 
 - (void)viewDidLoad {
@@ -33,6 +36,8 @@
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
+    hayNMX = _allNMX.count > 0;
+    hayNOM = _allNOM.count > 0;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -45,6 +50,15 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     // Return the number of sections.
     return 2;
+}
+
+- (NSString *)tableView:(UITableView *)tableView titleForFooterInSection:(NSInteger)section{
+    if (section == 0 && !hayNMX) {
+        return @"No se encontraron NMX";
+    } else if (section == 1 && !hayNOM){
+        return @"No se encontraron NOM";
+    }
+    return nil;
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{

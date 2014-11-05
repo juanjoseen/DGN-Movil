@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6245" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="SFb-ZJ-CDq">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="SFb-ZJ-CDq">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6238"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -35,7 +35,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="aHz-GJ-WSF">
-                                                    <rect key="frame" x="8" y="7" width="1620" height="522"/>
+                                                    <rect key="frame" x="8" y="7" width="1880" height="599"/>
                                                     <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="vj6-yt-ygN">
@@ -58,7 +58,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="02BSuperior01DeslizarA" id="lig-Xk-r8B">
                                 <rect key="frame" x="260" y="424" width="60" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMinY="YES"/>
-                                <color key="backgroundColor" red="0.01176470588" green="0.36470588240000001" blue="0.019607843140000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
                             <button hidden="YES" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="aF3-WY-iG9">
                                 <rect key="frame" x="100" y="98" width="46" height="30"/>
@@ -127,6 +127,7 @@
                         <barButtonItem key="backBarButtonItem" title=" " id="gyz-BQ-hiZ"/>
                     </navigationItem>
                     <connections>
+                        <outlet property="fondo" destination="xfm-N4-z57" id="wGx-ET-agU"/>
                         <outlet property="header" destination="WgM-Vt-n6S" id="p9x-s6-bzM"/>
                         <outlet property="menu" destination="vjb-5G-qzF" id="md1-Cz-ccq"/>
                         <outlet property="menuSlider" destination="lig-Xk-r8B" id="Fbb-X6-6pR"/>

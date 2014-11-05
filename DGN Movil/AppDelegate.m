@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "DataExtractor.h"
+#import "DetailNormaViewController.h"
 
 @interface AppDelegate ()
 
@@ -42,6 +44,51 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     // Saves changes in the application's managed object context before the application terminates.
     [self saveContext];
+}
+
+#pragma mark - URL response
+
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation{
+    
+    NSLog(@"Calling Application Bundle ID: %@", sourceApplication);
+    NSLog(@"URL scheme:%@", [url scheme]);
+    NSLog(@"URL query: %@", [url query]);
+    
+    NSMutableDictionary *dict = [NSMutableDictionary dictionary];
+    
+    NSArray *parametros = [[url query] componentsSeparatedByString:@"&"];
+    for (NSString *param in parametros){
+        NSArray *llaveValor = [param componentsSeparatedByString:@"="];
+        NSString *llave = llaveValor[0];
+        NSString *valor = llaveValor[1];
+        NSLog(@"Llave: %@\nValor: %@\n",llave,valor);
+        [dict setObject:valor forKey:llave];
+    }
+    DataExtractor *data = [[DataExtractor alloc] init];
+    
+    NSString *tipo = dict[@"tipo"];
+    NSString *clave = dict[@"clave"];
+    Norma *norma = nil;
+    if ([tipo isEqualToString:@"NMX"]){
+        norma = [data getNmxByKey:clave];
+    } else if ([tipo isEqualToString:@"NOM"]){
+        norma = [data getNomByKey:clave];
+    } else {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:[NSString stringWithFormat:@"Tipo de norma: '%@' no es un tipo valido",tipo] delegate:self cancelButtonTitle:@"ok" otherButtonTitles:nil, nil];
+        [alert show];
+    }
+    if (norma){
+        NSLog(@"titulo: %@",norma.titulo);
+        //DetailNormaViewController *detail = [[DetailNormaViewController alloc] init];
+        //detail.norma = norma;
+        
+        UINavigationController *nav = (UINavigationController *)self.window.rootViewController;
+        DetailNormaViewController *detail = [nav.storyboard instantiateViewControllerWithIdentifier:@"normaDetalle"];
+        detail.norma = norma;
+        [nav pushViewController:detail animated:YES];
+        
+    }
+    return YES;
 }
 
 #pragma mark - Core Data stack

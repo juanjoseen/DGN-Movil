@@ -24,6 +24,10 @@
 		0DC722EF19F31A0600F9DD51 /* NormaTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DC722EE19F31A0600F9DD51 /* NormaTableViewCell.m */; };
 		0DC722F219F31F1E00F9DD51 /* DetailNormaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DC722F119F31F1E00F9DD51 /* DetailNormaViewController.m */; };
 		0DC722F619F32AB600F9DD51 /* BPCriterioViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DC722F519F32AB600F9DD51 /* BPCriterioViewController.m */; };
+		0DDD26BB1A0AA0A1004EE64B /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0DDD26BA1A0AA0A1004EE64B /* NotificationCenter.framework */; };
+		0DDD26C11A0AA0A1004EE64B /* TodayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDD26C01A0AA0A1004EE64B /* TodayViewController.m */; };
+		0DDD26C31A0AA0A1004EE64B /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0DDD26C21A0AA0A1004EE64B /* MainInterface.storyboard */; };
+		0DDD26C61A0AA0A1004EE64B /* DGN Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 0DDD26B81A0AA0A1004EE64B /* DGN Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		0DDDF03619F342B40018B95D /* DependenciasTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDDF03519F342B30018B95D /* DependenciasTableViewController.m */; };
 		0DDDF03919F358BE0018B95D /* RAETableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDDF03819F358BE0018B95D /* RAETableViewController.m */; };
 		0DDDF03C19F366340018B95D /* FechasViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDDF03B19F366340018B95D /* FechasViewController.m */; };
@@ -44,7 +48,28 @@
 			remoteGlobalIDString = 0DC722A419F2AB7000F9DD51;
 			remoteInfo = "DGN Movil";
 		};
+		0DDD26C41A0AA0A1004EE64B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0DC7229D19F2AB7000F9DD51 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0DDD26B71A0AA0A1004EE64B;
+			remoteInfo = "DGN Widget";
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		0DDD26CA1A0AA0A1004EE64B /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				0DDD26C61A0AA0A1004EE64B /* DGN Widget.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		0DC722A519F2AB7100F9DD51 /* DGN Movil.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DGN Movil.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -78,6 +103,14 @@
 		0DC722F119F31F1E00F9DD51 /* DetailNormaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailNormaViewController.m; sourceTree = "<group>"; };
 		0DC722F419F32AB600F9DD51 /* BPCriterioViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BPCriterioViewController.h; sourceTree = "<group>"; };
 		0DC722F519F32AB600F9DD51 /* BPCriterioViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BPCriterioViewController.m; sourceTree = "<group>"; };
+		0DDD26B81A0AA0A1004EE64B /* DGN Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "DGN Widget.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0DDD26BA1A0AA0A1004EE64B /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		0DDD26BE1A0AA0A1004EE64B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0DDD26BF1A0AA0A1004EE64B /* TodayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TodayViewController.h; sourceTree = "<group>"; };
+		0DDD26C01A0AA0A1004EE64B /* TodayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TodayViewController.m; sourceTree = "<group>"; };
+		0DDD26C21A0AA0A1004EE64B /* MainInterface.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = MainInterface.storyboard; sourceTree = "<group>"; };
+		0DDD26CE1A0AA4FD004EE64B /* DGN Movil.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "DGN Movil.entitlements"; sourceTree = "<group>"; };
+		0DDD26CF1A0AA50C004EE64B /* DGN Widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "DGN Widget.entitlements"; sourceTree = "<group>"; };
 		0DDDF03419F342B30018B95D /* DependenciasTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DependenciasTableViewController.h; sourceTree = "<group>"; };
 		0DDDF03519F342B30018B95D /* DependenciasTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DependenciasTableViewController.m; sourceTree = "<group>"; };
 		0DDDF03719F358BE0018B95D /* RAETableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAETableViewController.h; sourceTree = "<group>"; };
@@ -115,6 +148,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0DDD26B51A0AA0A1004EE64B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0DDD26BB1A0AA0A1004EE64B /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -123,6 +164,8 @@
 			children = (
 				0DC722A719F2AB7100F9DD51 /* DGN Movil */,
 				0DC722C419F2AB7100F9DD51 /* DGN MovilTests */,
+				0DDD26BC1A0AA0A1004EE64B /* DGN Widget */,
+				0DDD26B91A0AA0A1004EE64B /* Frameworks */,
 				0DC722A619F2AB7100F9DD51 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -132,6 +175,7 @@
 			children = (
 				0DC722A519F2AB7100F9DD51 /* DGN Movil.app */,
 				0DC722C119F2AB7100F9DD51 /* DGN MovilTests.xctest */,
+				0DDD26B81A0AA0A1004EE64B /* DGN Widget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -139,6 +183,7 @@
 		0DC722A719F2AB7100F9DD51 /* DGN Movil */ = {
 			isa = PBXGroup;
 			children = (
+				0DDD26CE1A0AA4FD004EE64B /* DGN Movil.entitlements */,
 				0DC722AC19F2AB7100F9DD51 /* AppDelegate.h */,
 				0DC722AD19F2AB7100F9DD51 /* AppDelegate.m */,
 				0DC722B219F2AB7100F9DD51 /* ViewController.h */,
@@ -230,6 +275,34 @@
 			name = CellViews;
 			sourceTree = "<group>";
 		};
+		0DDD26B91A0AA0A1004EE64B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				0DDD26BA1A0AA0A1004EE64B /* NotificationCenter.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0DDD26BC1A0AA0A1004EE64B /* DGN Widget */ = {
+			isa = PBXGroup;
+			children = (
+				0DDD26CF1A0AA50C004EE64B /* DGN Widget.entitlements */,
+				0DDD26BF1A0AA0A1004EE64B /* TodayViewController.h */,
+				0DDD26C01A0AA0A1004EE64B /* TodayViewController.m */,
+				0DDD26C21A0AA0A1004EE64B /* MainInterface.storyboard */,
+				0DDD26BD1A0AA0A1004EE64B /* Supporting Files */,
+			);
+			path = "DGN Widget";
+			sourceTree = "<group>";
+		};
+		0DDD26BD1A0AA0A1004EE64B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				0DDD26BE1A0AA0A1004EE64B /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -240,10 +313,12 @@
 				0DC722A119F2AB7000F9DD51 /* Sources */,
 				0DC722A219F2AB7000F9DD51 /* Frameworks */,
 				0DC722A319F2AB7000F9DD51 /* Resources */,
+				0DDD26CA1A0AA0A1004EE64B /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				0DDD26C51A0AA0A1004EE64B /* PBXTargetDependency */,
 			);
 			name = "DGN Movil";
 			productName = "DGN Movil";
@@ -268,6 +343,23 @@
 			productReference = 0DC722C119F2AB7100F9DD51 /* DGN MovilTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		0DDD26B71A0AA0A1004EE64B /* DGN Widget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0DDD26C71A0AA0A1004EE64B /* Build configuration list for PBXNativeTarget "DGN Widget" */;
+			buildPhases = (
+				0DDD26B41A0AA0A1004EE64B /* Sources */,
+				0DDD26B51A0AA0A1004EE64B /* Frameworks */,
+				0DDD26B61A0AA0A1004EE64B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "DGN Widget";
+			productName = "DGN Widget";
+			productReference = 0DDD26B81A0AA0A1004EE64B /* DGN Widget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -279,10 +371,25 @@
 				TargetAttributes = {
 					0DC722A419F2AB7000F9DD51 = {
 						CreatedOnToolsVersion = 6.0.1;
+						DevelopmentTeam = 62Y3T5U5U7;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					0DC722C019F2AB7100F9DD51 = {
 						CreatedOnToolsVersion = 6.0.1;
 						TestTargetID = 0DC722A419F2AB7000F9DD51;
+					};
+					0DDD26B71A0AA0A1004EE64B = {
+						CreatedOnToolsVersion = 6.1;
+						DevelopmentTeam = 62Y3T5U5U7;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -301,6 +408,7 @@
 			targets = (
 				0DC722A419F2AB7000F9DD51 /* DGN Movil */,
 				0DC722C019F2AB7100F9DD51 /* DGN MovilTests */,
+				0DDD26B71A0AA0A1004EE64B /* DGN Widget */,
 			);
 		};
 /* End PBXProject section */
@@ -321,6 +429,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0DDD26B61A0AA0A1004EE64B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0DDD26C31A0AA0A1004EE64B /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,6 +479,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		0DDD26B41A0AA0A1004EE64B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0DDD26C11A0AA0A1004EE64B /* TodayViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -370,6 +494,11 @@
 			isa = PBXTargetDependency;
 			target = 0DC722A419F2AB7000F9DD51 /* DGN Movil */;
 			targetProxy = 0DC722C219F2AB7100F9DD51 /* PBXContainerItemProxy */;
+		};
+		0DDD26C51A0AA0A1004EE64B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0DDD26B71A0AA0A1004EE64B /* DGN Widget */;
+			targetProxy = 0DDD26C41A0AA0A1004EE64B /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -474,6 +603,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = "DGN Movil/DGN Movil.entitlements";
 				INFOPLIST_FILE = "DGN Movil/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -486,6 +616,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = "DGN Movil/DGN Movil.entitlements";
 				INFOPLIST_FILE = "DGN Movil/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -527,6 +658,34 @@
 			};
 			name = Release;
 		};
+		0DDD26C81A0AA0A1004EE64B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "DGN Widget/DGN Widget.entitlements";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "DGN Widget/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		0DDD26C91A0AA0A1004EE64B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = "DGN Widget/DGN Widget.entitlements";
+				INFOPLIST_FILE = "DGN Widget/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -556,6 +715,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		0DDD26C71A0AA0A1004EE64B /* Build configuration list for PBXNativeTarget "DGN Widget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0DDD26C81A0AA0A1004EE64B /* Debug */,
+				0DDD26C91A0AA0A1004EE64B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 

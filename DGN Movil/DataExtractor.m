@@ -170,6 +170,13 @@
         // Llenado del arreglo con todas las normas obtenidas
         [all addObject:nmx];
     }
+    
+    NSUserDefaults *sharedDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.axkansoftware.DGNSharingDefaults"];
+    Norma *nmx = all[0];
+    [sharedDefaults setObject:nmx.clave forKey:@"nmxClave"];
+    [sharedDefaults setObject:nmx.titulo forKey:@"nmxTitulo"];
+    [sharedDefaults synchronize];
+    
     return all;
 }
 
@@ -229,15 +236,21 @@
         // Llenado del arreglo con todas las normas obtenidas
         [all addObject:nom];
     }
+    
+    NSUserDefaults *sharedDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.axkansoftware.DGNSharingDefaults"];
+    Norma *nom = all[0];
+    [sharedDefaults setObject:nom.clave forKey:@"nomClave"];
+    [sharedDefaults setObject:nom.titulo forKey:@"nomTitulo"];
+    [sharedDefaults synchronize];
     return all;
 }
 
 - (BOOL)incNOM:(Norma *)nom{
-    return [base execQuery:[NSString stringWithFormat:@"UPDATE NOM SET conteo=%d WHERE clave='%@'",[nom.conteo integerValue]+1,nom.clave]];
+    return [base execQuery:[NSString stringWithFormat:@"UPDATE NOM SET conteo=%d WHERE clave='%@'",[nom.conteo intValue]+1,nom.clave]];
 }
 
 - (BOOL)incNMX:(Norma *)nmx{
-    return [base execQuery:[NSString stringWithFormat:@"UPDATE NMX SET conteo=%d WHERE clave='%@'",[nmx.conteo integerValue]+1,nmx.clave]];
+    return [base execQuery:[NSString stringWithFormat:@"UPDATE NMX SET conteo=%d WHERE clave='%@'",[nmx.conteo intValue]+1,nmx.clave]];
 }
 
 - (NSMutableArray *)getDependencias{
@@ -546,6 +559,7 @@
         val = @"1";
     NSString *query = [NSString stringWithFormat:@"UPDATE NMX SET favorito = %@ WHERE clave = '%@'",val,norma.clave];
     NSLog(@"query: %@",query);
+    
     return [base execQuery:query];
 }
 

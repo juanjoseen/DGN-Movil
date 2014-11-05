@@ -196,7 +196,7 @@
     [sNMX removeAllObjects];
     [sNOM removeAllObjects];
     
-    NSLog(@"nmx: %d",aNMX.count);
+    //NSLog(@"nmx: %d",aNMX.count);
     
     for (NSString *str in aNMX){
         NSRange range = [str rangeOfString:searchText options:NSCaseInsensitiveSearch];
@@ -214,7 +214,7 @@
             [sNOM addObject:str];
         }
     }
-    NSLog(@"nmx: %d",sNMX.count);
+    //NSLog(@"nmx: %d",sNMX.count);
     
     [self.tableView reloadData];
 }
