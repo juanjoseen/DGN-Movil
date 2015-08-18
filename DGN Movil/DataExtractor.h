@@ -40,4 +40,7 @@
 - (BOOL)incNMX:(Norma *)nmx;
 - (BOOL)incNOM:(Norma *)nom;
 
+- (NSMutableArray *)searchInNMX:(NSString *)text;
+- (NSMutableArray *)searchInNOM:(NSString *)text;
+
 @end

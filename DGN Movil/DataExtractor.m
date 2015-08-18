@@ -648,4 +648,116 @@
     return nom;
 }
 
+- (NSMutableArray *)searchInNMX:(NSString *)text{
+    NSMutableArray *all = nil;
+    
+    // Ejecucion de consulta a la base de datos
+    NSString *query = [NSString stringWithFormat:@"SELECT * FROM NMX WHERE clave LIKE '%%%@%%' OR titulo LIKE '%%%@%%'",text,text];
+    NSArray *res = [base execSelect:query];
+    
+    // Recorrido de los campos obtenidos de la consulta
+    for (int i=0;i<res.count;i+=11){
+        // Formateo de fecha
+        NSDateFormatter *dateformat=[[NSDateFormatter alloc]init];
+        [dateformat setDateFormat:@"YYYY-MM-DD"];
+        
+        // Obtencion de datos segun su orden
+        NSString *clave         = [res objectAtIndex:i];
+        NSString *titulo        = [res objectAtIndex:i+1];
+        NSString *publicacion   = [res objectAtIndex:i+2];
+        NSString *tipoNorma     = [res objectAtIndex:i+3];
+        NSString *producto      = [res objectAtIndex:i+4];
+        NSString *RAE           = [res objectAtIndex:i+5];
+        NSString *CTNN          = [res objectAtIndex:i+6];
+        NSString *ONN           = [res objectAtIndex:i+7];
+        NSString *documento     = [res objectAtIndex:i+8];
+        NSString *conteo        = [res objectAtIndex:i+9];
+        BOOL favorito           = [[res objectAtIndex:i+10] isEqualToString:@"1"];
+        if (publicacion.length > 9)
+            publicacion = [publicacion substringToIndex:10];
+        NSDate *fecha           = [dateformat dateFromString:publicacion];
+        
+        // Agrupacion de datos en una sola entidad
+        Norma *nmx = [[Norma alloc] initWithKey:clave];
+        nmx.titulo      = titulo;
+        nmx.fecha       = fecha;
+        nmx.tipoNorma   = tipoNorma;
+        nmx.producto    = producto;
+        nmx.RAE         = RAE;
+        nmx.CTNN        = CTNN;
+        nmx.ONN         = ONN;
+        nmx.documento   = documento;
+        nmx.conteo      = conteo;
+        nmx.favorito    = favorito;
+        
+        // Si aun no se crea el arreglo se crea uno nuevo
+        if (!all)
+            all = [NSMutableArray array];
+        // Llenado del arreglo con todas las normas obtenidas
+        [all addObject:nmx];
+    }
+    return all;
+}
+
+- (NSMutableArray *)searchInNOM:(NSString *)text{
+    NSMutableArray *all = nil;
+    
+    // Ejecucion de consulta a la base de datos
+    NSString *query = [NSString stringWithFormat:@"SELECT * FROM NOM WHERE clave LIKE '%%%@%%' OR titulo LIKE '%%%@%%'",text,text];
+    NSArray *res = [base execSelect:query];
+    NSDateFormatter *dateformat=[[NSDateFormatter alloc]init];
+    [dateformat setDateFormat:@"YYYY-MM-DD"];
+    // Recorrido de los campos obtenidos de la consulta
+    for (int i=0;i<res.count;i+=14){
+        // Formateo de fecha
+        NSDate *fechaVigor = nil;
+        
+        // Obtencion de datos segun su orden
+        NSString *clave         = [res objectAtIndex:i];
+        NSString *titulo        = [res objectAtIndex:i+1];
+        NSString *publicacion   = [res objectAtIndex:i+2];
+        NSString *entrada       = [res objectAtIndex:i+3];
+        NSString *tipoNorma     = [res objectAtIndex:i+4];
+        NSString *internacional = [res objectAtIndex:i+5];
+        NSString *producto      = [res objectAtIndex:i+6];
+        NSString *concordancia  = [res objectAtIndex:i+7];
+        NSString *RAE           = [res objectAtIndex:i+8];
+        NSString *dependencia   = [res objectAtIndex:i+9];
+        NSString *CCNN          = [res objectAtIndex:i+10];
+        NSString *documento     = [res objectAtIndex:i+11];
+        NSString *conteo        = [res objectAtIndex:i+12];
+        BOOL favorito           = [[res objectAtIndex:i+13] isEqualToString:@"1"];
+        //NSLog(@"publicacion: %@\t\tentrada: %@",publicacion,entrada);
+        if (publicacion.length > 9)
+            publicacion = [publicacion substringToIndex:10];
+        NSDate *fecha           = [dateformat dateFromString:publicacion];
+        if (entrada.length>9)
+            entrada = [entrada substringToIndex:10];
+        fechaVigor          = [dateformat dateFromString:entrada];
+        // Agrupacion de datos en una sola entidad
+        Norma *nom = [[Norma alloc] initWithKey:clave];
+        nom.titulo              = titulo;
+        nom.fecha               = fecha;
+        if (fechaVigor)
+            nom.fechaEntrada    = fechaVigor;
+        nom.tipoNorma           = tipoNorma;
+        nom.normaInternacional  = internacional;
+        nom.producto            = producto;
+        nom.concordancia        = concordancia;
+        nom.RAE                 = RAE;
+        nom.dependencia         = dependencia;
+        nom.CCNN                = CCNN;
+        nom.documento           = documento;
+        nom.conteo              = conteo;
+        nom.favorito            = favorito;
+        
+        // Si aun no se crea el arreglo se crea uno nuevo
+        if (!all)
+            all = [NSMutableArray array];
+        // Llenado del arreglo con todas las normas obtenidas
+        [all addObject:nom];
+    }
+    return all;
+}
+
 @end

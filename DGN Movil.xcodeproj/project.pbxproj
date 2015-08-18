@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D83261B1B825CE0003A6583 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D83261A1B825CE0003A6583 /* Storyboard.storyboard */; };
+		0D83261E1B8261EE003A6583 /* InitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D83261D1B8261EE003A6583 /* InitialViewController.m */; };
+		0D8326211B828D6B003A6583 /* MenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D8326201B828D6B003A6583 /* MenuTableViewCell.m */; };
+		0D8326251B829859003A6583 /* SearchByWordsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D8326241B829859003A6583 /* SearchByWordsViewController.m */; };
+		0D8326281B82B5B0003A6583 /* SearchByWordTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D8326271B82B5B0003A6583 /* SearchByWordTableViewCell.m */; };
+		0D8EBBC61B83A4A400A976CE /* NormDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D8EBBC51B83A4A400A976CE /* NormDetailsViewController.m */; };
+		0D8EBBC91B83B3B800A976CE /* NOMNormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D8EBBC81B83B3B800A976CE /* NOMNormViewController.m */; };
 		0DC722AB19F2AB7100F9DD51 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DC722AA19F2AB7100F9DD51 /* main.m */; };
 		0DC722AE19F2AB7100F9DD51 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DC722AD19F2AB7100F9DD51 /* AppDelegate.m */; };
 		0DC722B119F2AB7100F9DD51 /* DGN_Movil.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0DC722AF19F2AB7100F9DD51 /* DGN_Movil.xcdatamodeld */; };
@@ -72,6 +79,19 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0D83261A1B825CE0003A6583 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
+		0D83261C1B8261EE003A6583 /* InitialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InitialViewController.h; sourceTree = "<group>"; };
+		0D83261D1B8261EE003A6583 /* InitialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InitialViewController.m; sourceTree = "<group>"; };
+		0D83261F1B828D6B003A6583 /* MenuTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenuTableViewCell.h; sourceTree = "<group>"; };
+		0D8326201B828D6B003A6583 /* MenuTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenuTableViewCell.m; sourceTree = "<group>"; };
+		0D8326231B829859003A6583 /* SearchByWordsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchByWordsViewController.h; sourceTree = "<group>"; };
+		0D8326241B829859003A6583 /* SearchByWordsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchByWordsViewController.m; sourceTree = "<group>"; };
+		0D8326261B82B5B0003A6583 /* SearchByWordTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchByWordTableViewCell.h; sourceTree = "<group>"; };
+		0D8326271B82B5B0003A6583 /* SearchByWordTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchByWordTableViewCell.m; sourceTree = "<group>"; };
+		0D8EBBC41B83A4A400A976CE /* NormDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NormDetailsViewController.h; sourceTree = "<group>"; };
+		0D8EBBC51B83A4A400A976CE /* NormDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NormDetailsViewController.m; sourceTree = "<group>"; };
+		0D8EBBC71B83B3B800A976CE /* NOMNormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NOMNormViewController.h; sourceTree = "<group>"; };
+		0D8EBBC81B83B3B800A976CE /* NOMNormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NOMNormViewController.m; sourceTree = "<group>"; };
 		0DC722A519F2AB7100F9DD51 /* DGN Movil.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DGN Movil.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DC722A919F2AB7100F9DD51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0DC722AA19F2AB7100F9DD51 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -159,6 +179,52 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D8326191B825C8A003A6583 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0DC722E519F2EF2C00F9DD51 /* BPPalabraTableViewController.h */,
+				0DC722E619F2EF2C00F9DD51 /* BPPalabraTableViewController.m */,
+				0DC722ED19F31A0600F9DD51 /* NormaTableViewCell.h */,
+				0DC722EE19F31A0600F9DD51 /* NormaTableViewCell.m */,
+				0DC722F419F32AB600F9DD51 /* BPCriterioViewController.h */,
+				0DC722F519F32AB600F9DD51 /* BPCriterioViewController.m */,
+				0DDDF03419F342B30018B95D /* DependenciasTableViewController.h */,
+				0DDDF03519F342B30018B95D /* DependenciasTableViewController.m */,
+				0DDDF03719F358BE0018B95D /* RAETableViewController.h */,
+				0DDDF03819F358BE0018B95D /* RAETableViewController.m */,
+				0DDDF03A19F366340018B95D /* FechasViewController.h */,
+				0DDDF03B19F366340018B95D /* FechasViewController.m */,
+				0DDDF03D19F3AADF0018B95D /* SearchDetailTableViewController.h */,
+				0DDDF03E19F3AADF0018B95D /* SearchDetailTableViewController.m */,
+				0DDDF04019F3B8F40018B95D /* FavoritosTableViewController.h */,
+				0DDDF04119F3B8F40018B95D /* FavoritosTableViewController.m */,
+				0DDDF04519F416150018B95D /* TramitesTableViewController.h */,
+				0DDDF04619F416150018B95D /* TramitesTableViewController.m */,
+				0DDDF04819F419620018B95D /* AyudaViewController.h */,
+				0DDDF04919F419620018B95D /* AyudaViewController.m */,
+				0DDDF04B19F4197F0018B95D /* AboutViewController.h */,
+				0DDDF04C19F4197F0018B95D /* AboutViewController.m */,
+				0DDDF05219F460C90018B95D /* Ayuda2ViewController.h */,
+				0DDDF05319F460C90018B95D /* Ayuda2ViewController.m */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		0D8326221B829822003A6583 /* New Views */ = {
+			isa = PBXGroup;
+			children = (
+				0D83261C1B8261EE003A6583 /* InitialViewController.h */,
+				0D83261D1B8261EE003A6583 /* InitialViewController.m */,
+				0D8326231B829859003A6583 /* SearchByWordsViewController.h */,
+				0D8326241B829859003A6583 /* SearchByWordsViewController.m */,
+				0D8EBBC41B83A4A400A976CE /* NormDetailsViewController.h */,
+				0D8EBBC51B83A4A400A976CE /* NormDetailsViewController.m */,
+				0D8EBBC71B83B3B800A976CE /* NOMNormViewController.h */,
+				0D8EBBC81B83B3B800A976CE /* NOMNormViewController.m */,
+			);
+			name = "New Views";
+			sourceTree = "<group>";
+		};
 		0DC7229C19F2AB7000F9DD51 = {
 			isa = PBXGroup;
 			children = (
@@ -189,36 +255,15 @@
 				0DC722B219F2AB7100F9DD51 /* ViewController.h */,
 				0DC722B319F2AB7100F9DD51 /* ViewController.m */,
 				0DC722B519F2AB7100F9DD51 /* Main.storyboard */,
+				0D83261A1B825CE0003A6583 /* Storyboard.storyboard */,
 				0DC722B819F2AB7100F9DD51 /* Images.xcassets */,
 				0DC722BA19F2AB7100F9DD51 /* LaunchScreen.xib */,
 				0DC722AF19F2AB7100F9DD51 /* DGN_Movil.xcdatamodeld */,
 				0DC722A819F2AB7100F9DD51 /* Supporting Files */,
 				0DC722D719F2AC0700F9DD51 /* Datos */,
 				0DC722F319F322F500F9DD51 /* CellViews */,
-				0DC722E519F2EF2C00F9DD51 /* BPPalabraTableViewController.h */,
-				0DC722E619F2EF2C00F9DD51 /* BPPalabraTableViewController.m */,
-				0DC722ED19F31A0600F9DD51 /* NormaTableViewCell.h */,
-				0DC722EE19F31A0600F9DD51 /* NormaTableViewCell.m */,
-				0DC722F419F32AB600F9DD51 /* BPCriterioViewController.h */,
-				0DC722F519F32AB600F9DD51 /* BPCriterioViewController.m */,
-				0DDDF03419F342B30018B95D /* DependenciasTableViewController.h */,
-				0DDDF03519F342B30018B95D /* DependenciasTableViewController.m */,
-				0DDDF03719F358BE0018B95D /* RAETableViewController.h */,
-				0DDDF03819F358BE0018B95D /* RAETableViewController.m */,
-				0DDDF03A19F366340018B95D /* FechasViewController.h */,
-				0DDDF03B19F366340018B95D /* FechasViewController.m */,
-				0DDDF03D19F3AADF0018B95D /* SearchDetailTableViewController.h */,
-				0DDDF03E19F3AADF0018B95D /* SearchDetailTableViewController.m */,
-				0DDDF04019F3B8F40018B95D /* FavoritosTableViewController.h */,
-				0DDDF04119F3B8F40018B95D /* FavoritosTableViewController.m */,
-				0DDDF04519F416150018B95D /* TramitesTableViewController.h */,
-				0DDDF04619F416150018B95D /* TramitesTableViewController.m */,
-				0DDDF04819F419620018B95D /* AyudaViewController.h */,
-				0DDDF04919F419620018B95D /* AyudaViewController.m */,
-				0DDDF04B19F4197F0018B95D /* AboutViewController.h */,
-				0DDDF04C19F4197F0018B95D /* AboutViewController.m */,
-				0DDDF05219F460C90018B95D /* Ayuda2ViewController.h */,
-				0DDDF05319F460C90018B95D /* Ayuda2ViewController.m */,
+				0D8326191B825C8A003A6583 /* Views */,
+				0D8326221B829822003A6583 /* New Views */,
 			);
 			path = "DGN Movil";
 			sourceTree = "<group>";
@@ -271,6 +316,10 @@
 				0DC722E019F2B79800F9DD51 /* TableViewCell.m */,
 				0DC722F019F31F1E00F9DD51 /* DetailNormaViewController.h */,
 				0DC722F119F31F1E00F9DD51 /* DetailNormaViewController.m */,
+				0D83261F1B828D6B003A6583 /* MenuTableViewCell.h */,
+				0D8326201B828D6B003A6583 /* MenuTableViewCell.m */,
+				0D8326261B82B5B0003A6583 /* SearchByWordTableViewCell.h */,
+				0D8326271B82B5B0003A6583 /* SearchByWordTableViewCell.m */,
 			);
 			name = CellViews;
 			sourceTree = "<group>";
@@ -422,6 +471,7 @@
 				0DC722BC19F2AB7100F9DD51 /* LaunchScreen.xib in Resources */,
 				0DDDF05119F45F8A0018B95D /* catanmx.db in Resources */,
 				0DC722B919F2AB7100F9DD51 /* Images.xcassets in Resources */,
+				0D83261B1B825CE0003A6583 /* Storyboard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -450,7 +500,10 @@
 				0DC722B119F2AB7100F9DD51 /* DGN_Movil.xcdatamodeld in Sources */,
 				0DC722AE19F2AB7100F9DD51 /* AppDelegate.m in Sources */,
 				0DDDF04219F3B8F40018B95D /* FavoritosTableViewController.m in Sources */,
+				0D8EBBC61B83A4A400A976CE /* NormDetailsViewController.m in Sources */,
+				0D8326211B828D6B003A6583 /* MenuTableViewCell.m in Sources */,
 				0DC722B419F2AB7100F9DD51 /* ViewController.m in Sources */,
+				0D8EBBC91B83B3B800A976CE /* NOMNormViewController.m in Sources */,
 				0DC722F619F32AB600F9DD51 /* BPCriterioViewController.m in Sources */,
 				0DDDF03F19F3AADF0018B95D /* SearchDetailTableViewController.m in Sources */,
 				0DDDF04D19F4197F0018B95D /* AboutViewController.m in Sources */,
@@ -458,6 +511,7 @@
 				0DDDF03C19F366340018B95D /* FechasViewController.m in Sources */,
 				0DC722E719F2EF2C00F9DD51 /* BPPalabraTableViewController.m in Sources */,
 				0DDDF03919F358BE0018B95D /* RAETableViewController.m in Sources */,
+				0D8326281B82B5B0003A6583 /* SearchByWordTableViewCell.m in Sources */,
 				0DDDF04A19F419620018B95D /* AyudaViewController.m in Sources */,
 				0DDDF04719F416150018B95D /* TramitesTableViewController.m in Sources */,
 				0DC722D319F2ABEC00F9DD51 /* Conexion.m in Sources */,
@@ -466,8 +520,10 @@
 				0DDDF05419F460C90018B95D /* Ayuda2ViewController.m in Sources */,
 				0DC722E119F2B79800F9DD51 /* TableViewCell.m in Sources */,
 				0DC722EF19F31A0600F9DD51 /* NormaTableViewCell.m in Sources */,
+				0D83261E1B8261EE003A6583 /* InitialViewController.m in Sources */,
 				0DC722DC19F2ACBB00F9DD51 /* Norma.m in Sources */,
 				0DC722AB19F2AB7100F9DD51 /* main.m in Sources */,
+				0D8326251B829859003A6583 /* SearchByWordsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -723,6 +779,7 @@
 				0DDD26C91A0AA0A1004EE64B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

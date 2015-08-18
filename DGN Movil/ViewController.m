@@ -187,6 +187,8 @@
     static NSString *CellIdentifier = @"Cell";
     TableViewCell *cell = (TableViewCell*)[tableView dequeueReusableCellWithIdentifier:CellIdentifier forIndexPath:indexPath];
     //NSLog(@"iconos: %d",iconos.count);
+    
+    
     cell.icono.image = iconos[indexPath.row];
     cell.icono.frame = CGRectMake(9, 9, 50, 50);
     cell.titulo.text = opciones[indexPath.row];
