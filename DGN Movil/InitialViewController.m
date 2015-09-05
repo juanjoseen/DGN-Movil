@@ -27,6 +27,8 @@
     // Do any additional setup after loading the view.
     isTouchingMenu = NO;
     
+    [self setNeedsStatusBarAppearanceUpdate];
+    
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     
@@ -35,6 +37,11 @@
     opciones = [NSArray arrayWithObjects:@"Búsqueda por Palabra", @"Búsqueda por Criterio", @"Trámites y Servicios", @"Favoritos", @"Ayuda", @"Acerca de",nil];
     iconos = [NSArray arrayWithObjects:[UIImage imageNamed:@"01BLateral01BPalabra"], [UIImage imageNamed:@"01BLateral02BCriterio"], [UIImage imageNamed:@"01BLateral03Trámites"], [UIImage imageNamed:@"01BLateral03Favoritos"], [UIImage imageNamed:@"01BLateral05Ayuda"], [UIImage imageNamed:@"01BLateral06Acerca"],nil];
     hIconos = [NSArray arrayWithObjects:[UIImage imageNamed:@"01BLateral01BPalabraA"], [UIImage imageNamed:@"01BLateral02BCriterioA"], [UIImage imageNamed:@"01BLateral03TrámitesA"], [UIImage imageNamed:@"01BLateral03FavoritosA"], [UIImage imageNamed:@"01BLateral05AyudaA"], [UIImage imageNamed:@"01BLateral06AcercaA"], nil];
+}
+
+
+- (UIStatusBarStyle) preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -124,7 +131,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     NSString *nombre = [NSString stringWithFormat:@"segue%d",(int)indexPath.row];
-    if (indexPath.row < 1)
+    if (indexPath.row < 2)
     [self performSegueWithIdentifier:nombre sender:self];
 }
 

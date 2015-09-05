@@ -39,6 +39,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
+    [self setNeedsStatusBarAppearanceUpdate];
+    
     self.tableView.dataSource = self;
     self.tableView.delegate = self;
     self.tableView.tableFooterView.frame = CGRectZero;
@@ -57,11 +59,16 @@
     isSearching = NO;
 }
 
+- (UIStatusBarStyle) preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
+}
+
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     NMX = [data getTop10NMX];
     NOM = [data getTop10NOM];
     [self.tableView reloadData];
+    [self.loading stopAnimating];
 }
 
 - (void)didReceiveMemoryWarning {

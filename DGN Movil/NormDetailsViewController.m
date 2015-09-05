@@ -43,6 +43,10 @@
     self.starButton.selected = self.norma.favorito;
 }
 
+- (UIStatusBarStyle) preferredStatusBarStyle {
+    return UIStatusBarStyleLightContent;
+}
+
 - (void)viewDidAppear:(BOOL)animated{
     [super viewDidAppear:animated];
     [data incNMX:self.norma];

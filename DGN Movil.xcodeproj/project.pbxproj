@@ -7,11 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D3DED931B9A0064000D62C5 /* DependenciasViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D3DED921B9A0064000D62C5 /* DependenciasViewController.m */; };
+		0D3DED961B9A0F0A000D62C5 /* RAEViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D3DED951B9A0F0A000D62C5 /* RAEViewController.m */; };
+		0D3DED991B9A2281000D62C5 /* SelectFechasViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D3DED981B9A2281000D62C5 /* SelectFechasViewController.m */; };
+		0D3DED9C1B9A7212000D62C5 /* ResultadoBusquedaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D3DED9B1B9A7212000D62C5 /* ResultadoBusquedaViewController.m */; };
 		0D83261B1B825CE0003A6583 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D83261A1B825CE0003A6583 /* Storyboard.storyboard */; };
 		0D83261E1B8261EE003A6583 /* InitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D83261D1B8261EE003A6583 /* InitialViewController.m */; };
 		0D8326211B828D6B003A6583 /* MenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D8326201B828D6B003A6583 /* MenuTableViewCell.m */; };
 		0D8326251B829859003A6583 /* SearchByWordsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D8326241B829859003A6583 /* SearchByWordsViewController.m */; };
 		0D8326281B82B5B0003A6583 /* SearchByWordTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D8326271B82B5B0003A6583 /* SearchByWordTableViewCell.m */; };
+		0D89F7331B852B6100C54D76 /* SearchByFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D89F7321B852B6100C54D76 /* SearchByFilterViewController.m */; };
 		0D8EBBC61B83A4A400A976CE /* NormDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D8EBBC51B83A4A400A976CE /* NormDetailsViewController.m */; };
 		0D8EBBC91B83B3B800A976CE /* NOMNormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D8EBBC81B83B3B800A976CE /* NOMNormViewController.m */; };
 		0DC722AB19F2AB7100F9DD51 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DC722AA19F2AB7100F9DD51 /* main.m */; };
@@ -79,6 +84,14 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0D3DED911B9A0064000D62C5 /* DependenciasViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DependenciasViewController.h; sourceTree = "<group>"; };
+		0D3DED921B9A0064000D62C5 /* DependenciasViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DependenciasViewController.m; sourceTree = "<group>"; };
+		0D3DED941B9A0F0A000D62C5 /* RAEViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAEViewController.h; sourceTree = "<group>"; };
+		0D3DED951B9A0F0A000D62C5 /* RAEViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RAEViewController.m; sourceTree = "<group>"; };
+		0D3DED971B9A2281000D62C5 /* SelectFechasViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SelectFechasViewController.h; sourceTree = "<group>"; };
+		0D3DED981B9A2281000D62C5 /* SelectFechasViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectFechasViewController.m; sourceTree = "<group>"; };
+		0D3DED9A1B9A7212000D62C5 /* ResultadoBusquedaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultadoBusquedaViewController.h; sourceTree = "<group>"; };
+		0D3DED9B1B9A7212000D62C5 /* ResultadoBusquedaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultadoBusquedaViewController.m; sourceTree = "<group>"; };
 		0D83261A1B825CE0003A6583 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		0D83261C1B8261EE003A6583 /* InitialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InitialViewController.h; sourceTree = "<group>"; };
 		0D83261D1B8261EE003A6583 /* InitialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InitialViewController.m; sourceTree = "<group>"; };
@@ -88,6 +101,8 @@
 		0D8326241B829859003A6583 /* SearchByWordsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchByWordsViewController.m; sourceTree = "<group>"; };
 		0D8326261B82B5B0003A6583 /* SearchByWordTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchByWordTableViewCell.h; sourceTree = "<group>"; };
 		0D8326271B82B5B0003A6583 /* SearchByWordTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchByWordTableViewCell.m; sourceTree = "<group>"; };
+		0D89F7311B852B6100C54D76 /* SearchByFilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SearchByFilterViewController.h; sourceTree = "<group>"; };
+		0D89F7321B852B6100C54D76 /* SearchByFilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SearchByFilterViewController.m; sourceTree = "<group>"; };
 		0D8EBBC41B83A4A400A976CE /* NormDetailsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NormDetailsViewController.h; sourceTree = "<group>"; };
 		0D8EBBC51B83A4A400A976CE /* NormDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NormDetailsViewController.m; sourceTree = "<group>"; };
 		0D8EBBC71B83B3B800A976CE /* NOMNormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NOMNormViewController.h; sourceTree = "<group>"; };
@@ -215,6 +230,15 @@
 			children = (
 				0D83261C1B8261EE003A6583 /* InitialViewController.h */,
 				0D83261D1B8261EE003A6583 /* InitialViewController.m */,
+				0D89F7301B852B3A00C54D76 /* Busqueda por Palabra */,
+				0D89F7341B852B6600C54D76 /* Busqueda por Criterio */,
+			);
+			name = "New Views";
+			sourceTree = "<group>";
+		};
+		0D89F7301B852B3A00C54D76 /* Busqueda por Palabra */ = {
+			isa = PBXGroup;
+			children = (
 				0D8326231B829859003A6583 /* SearchByWordsViewController.h */,
 				0D8326241B829859003A6583 /* SearchByWordsViewController.m */,
 				0D8EBBC41B83A4A400A976CE /* NormDetailsViewController.h */,
@@ -222,7 +246,24 @@
 				0D8EBBC71B83B3B800A976CE /* NOMNormViewController.h */,
 				0D8EBBC81B83B3B800A976CE /* NOMNormViewController.m */,
 			);
-			name = "New Views";
+			name = "Busqueda por Palabra";
+			sourceTree = "<group>";
+		};
+		0D89F7341B852B6600C54D76 /* Busqueda por Criterio */ = {
+			isa = PBXGroup;
+			children = (
+				0D89F7311B852B6100C54D76 /* SearchByFilterViewController.h */,
+				0D89F7321B852B6100C54D76 /* SearchByFilterViewController.m */,
+				0D3DED911B9A0064000D62C5 /* DependenciasViewController.h */,
+				0D3DED921B9A0064000D62C5 /* DependenciasViewController.m */,
+				0D3DED941B9A0F0A000D62C5 /* RAEViewController.h */,
+				0D3DED951B9A0F0A000D62C5 /* RAEViewController.m */,
+				0D3DED971B9A2281000D62C5 /* SelectFechasViewController.h */,
+				0D3DED981B9A2281000D62C5 /* SelectFechasViewController.m */,
+				0D3DED9A1B9A7212000D62C5 /* ResultadoBusquedaViewController.h */,
+				0D3DED9B1B9A7212000D62C5 /* ResultadoBusquedaViewController.m */,
+			);
+			name = "Busqueda por Criterio";
 			sourceTree = "<group>";
 		};
 		0DC7229C19F2AB7000F9DD51 = {
@@ -498,6 +539,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				0DC722B119F2AB7100F9DD51 /* DGN_Movil.xcdatamodeld in Sources */,
+				0D3DED931B9A0064000D62C5 /* DependenciasViewController.m in Sources */,
+				0D3DED991B9A2281000D62C5 /* SelectFechasViewController.m in Sources */,
 				0DC722AE19F2AB7100F9DD51 /* AppDelegate.m in Sources */,
 				0DDDF04219F3B8F40018B95D /* FavoritosTableViewController.m in Sources */,
 				0D8EBBC61B83A4A400A976CE /* NormDetailsViewController.m in Sources */,
@@ -519,11 +562,14 @@
 				0DC722D619F2AC0100F9DD51 /* DataExtractor.m in Sources */,
 				0DDDF05419F460C90018B95D /* Ayuda2ViewController.m in Sources */,
 				0DC722E119F2B79800F9DD51 /* TableViewCell.m in Sources */,
+				0D3DED9C1B9A7212000D62C5 /* ResultadoBusquedaViewController.m in Sources */,
 				0DC722EF19F31A0600F9DD51 /* NormaTableViewCell.m in Sources */,
 				0D83261E1B8261EE003A6583 /* InitialViewController.m in Sources */,
+				0D3DED961B9A0F0A000D62C5 /* RAEViewController.m in Sources */,
 				0DC722DC19F2ACBB00F9DD51 /* Norma.m in Sources */,
 				0DC722AB19F2AB7100F9DD51 /* main.m in Sources */,
 				0D8326251B829859003A6583 /* SearchByWordsViewController.m in Sources */,
+				0D89F7331B852B6100C54D76 /* SearchByFilterViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

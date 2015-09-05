@@ -9,6 +9,9 @@
 #import "Conexion.h"
 #import "Norma.h"
 
+#define RGB_COLOR(R, G, B) [UIColor colorWithRed:R/255.0 green:G/255.0 blue:B/255.0 alpha:1.0]
+#define RGBA_COLOR(R, G, B, A) [UIColor colorWithRed:R/255.0 green:G/255.0 blue:B/255.0 alpha:A]
+
 @interface DataExtractor : NSObject{
     Conexion *base;
 }
