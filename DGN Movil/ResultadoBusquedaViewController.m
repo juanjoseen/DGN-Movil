@@ -9,6 +9,9 @@
 #import "ResultadoBusquedaViewController.h"
 #import "Norma.h"
 #import "SearchByWordTableViewCell.h"
+#import "NormDetailsViewController.h"
+#import "NOMNormViewController.h"
+
 
 @interface ResultadoBusquedaViewController ()
 
@@ -87,14 +90,32 @@
     return cell;
 }
 
-/*
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    selected = indexPath.section == 0 ? self.allNMX[indexPath.row]: self.allNOM[indexPath.row];
+    NSString *identifier = indexPath.section == 0 ? @"toNMX" : @"toNOM";
+    [self performSegueWithIdentifier:identifier sender:self];
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+
+
 #pragma mark - Navigation
+
+- (IBAction)getBack:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+}
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    if ([segue.identifier isEqualToString:@"toNMX"]){
+        NormDetailsViewController *ndvc = (NormDetailsViewController *)segue.destinationViewController;
+        ndvc.norma = selected;
+    } else if ([segue.identifier isEqualToString:@"toNOM"]){
+        NOMNormViewController *nomvc = (NOMNormViewController *)segue.destinationViewController;
+        nomvc.norma = selected;
+    }
 }
-*/
+
 
 @end

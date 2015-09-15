@@ -11,6 +11,8 @@
 		0D3DED961B9A0F0A000D62C5 /* RAEViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D3DED951B9A0F0A000D62C5 /* RAEViewController.m */; };
 		0D3DED991B9A2281000D62C5 /* SelectFechasViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D3DED981B9A2281000D62C5 /* SelectFechasViewController.m */; };
 		0D3DED9C1B9A7212000D62C5 /* ResultadoBusquedaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D3DED9B1B9A7212000D62C5 /* ResultadoBusquedaViewController.m */; };
+		0D5CDB9C1BA89B1F003C06A4 /* FavoritosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D5CDB9B1BA89B1F003C06A4 /* FavoritosViewController.m */; };
+		0D5CDBA01BA8BFF2003C06A4 /* AyudasViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D5CDB9F1BA8BFF2003C06A4 /* AyudasViewController.m */; };
 		0D83261B1B825CE0003A6583 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0D83261A1B825CE0003A6583 /* Storyboard.storyboard */; };
 		0D83261E1B8261EE003A6583 /* InitialViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D83261D1B8261EE003A6583 /* InitialViewController.m */; };
 		0D8326211B828D6B003A6583 /* MenuTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D8326201B828D6B003A6583 /* MenuTableViewCell.m */; };
@@ -92,6 +94,10 @@
 		0D3DED981B9A2281000D62C5 /* SelectFechasViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SelectFechasViewController.m; sourceTree = "<group>"; };
 		0D3DED9A1B9A7212000D62C5 /* ResultadoBusquedaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ResultadoBusquedaViewController.h; sourceTree = "<group>"; };
 		0D3DED9B1B9A7212000D62C5 /* ResultadoBusquedaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ResultadoBusquedaViewController.m; sourceTree = "<group>"; };
+		0D5CDB9A1BA89B1F003C06A4 /* FavoritosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FavoritosViewController.h; sourceTree = "<group>"; };
+		0D5CDB9B1BA89B1F003C06A4 /* FavoritosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FavoritosViewController.m; sourceTree = "<group>"; };
+		0D5CDB9E1BA8BFF2003C06A4 /* AyudasViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AyudasViewController.h; sourceTree = "<group>"; };
+		0D5CDB9F1BA8BFF2003C06A4 /* AyudasViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AyudasViewController.m; sourceTree = "<group>"; };
 		0D83261A1B825CE0003A6583 /* Storyboard.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		0D83261C1B8261EE003A6583 /* InitialViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InitialViewController.h; sourceTree = "<group>"; };
 		0D83261D1B8261EE003A6583 /* InitialViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InitialViewController.m; sourceTree = "<group>"; };
@@ -194,6 +200,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0D5CDB9D1BA89B25003C06A4 /* Favoritos */ = {
+			isa = PBXGroup;
+			children = (
+				0D5CDB9A1BA89B1F003C06A4 /* FavoritosViewController.h */,
+				0D5CDB9B1BA89B1F003C06A4 /* FavoritosViewController.m */,
+			);
+			name = Favoritos;
+			sourceTree = "<group>";
+		};
 		0D8326191B825C8A003A6583 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -232,6 +247,9 @@
 				0D83261D1B8261EE003A6583 /* InitialViewController.m */,
 				0D89F7301B852B3A00C54D76 /* Busqueda por Palabra */,
 				0D89F7341B852B6600C54D76 /* Busqueda por Criterio */,
+				0D5CDB9D1BA89B25003C06A4 /* Favoritos */,
+				0D5CDB9E1BA8BFF2003C06A4 /* AyudasViewController.h */,
+				0D5CDB9F1BA8BFF2003C06A4 /* AyudasViewController.m */,
 			);
 			name = "New Views";
 			sourceTree = "<group>";
@@ -545,6 +563,7 @@
 				0DDDF04219F3B8F40018B95D /* FavoritosTableViewController.m in Sources */,
 				0D8EBBC61B83A4A400A976CE /* NormDetailsViewController.m in Sources */,
 				0D8326211B828D6B003A6583 /* MenuTableViewCell.m in Sources */,
+				0D5CDBA01BA8BFF2003C06A4 /* AyudasViewController.m in Sources */,
 				0DC722B419F2AB7100F9DD51 /* ViewController.m in Sources */,
 				0D8EBBC91B83B3B800A976CE /* NOMNormViewController.m in Sources */,
 				0DC722F619F32AB600F9DD51 /* BPCriterioViewController.m in Sources */,
@@ -568,6 +587,7 @@
 				0D3DED961B9A0F0A000D62C5 /* RAEViewController.m in Sources */,
 				0DC722DC19F2ACBB00F9DD51 /* Norma.m in Sources */,
 				0DC722AB19F2AB7100F9DD51 /* main.m in Sources */,
+				0D5CDB9C1BA89B1F003C06A4 /* FavoritosViewController.m in Sources */,
 				0D8326251B829859003A6583 /* SearchByWordsViewController.m in Sources */,
 				0D89F7331B852B6100C54D76 /* SearchByFilterViewController.m in Sources */,
 			);

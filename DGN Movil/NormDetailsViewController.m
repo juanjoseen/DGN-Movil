@@ -73,6 +73,7 @@
 
 - (IBAction)getBack {
     [self.navigationController popViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 /*

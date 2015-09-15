@@ -131,7 +131,7 @@
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     NSString *nombre = [NSString stringWithFormat:@"segue%d",(int)indexPath.row];
-    if (indexPath.row < 2)
+    //if (indexPath.row < 4)
     [self performSegueWithIdentifier:nombre sender:self];
 }
 
