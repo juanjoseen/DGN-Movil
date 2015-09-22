@@ -30,7 +30,7 @@
     
     self.titleLbl.text = self.norma.clave;
     self.lblClave.text = self.norma.clave;
-    self.titleLbl.text = self.norma.titulo;
+    self.lblTitulo.text = self.norma.titulo;
     self.lblFechaPub.text = [dateformat stringFromDate:self.norma.fecha];
     self.lblFechaEntrada.text = [dateformat stringFromDate:self.norma.fechaEntrada];
     self.lblTipo.text = self.norma.tipoNorma;

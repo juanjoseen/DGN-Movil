@@ -97,6 +97,11 @@
     didTouch = NO;
 }
 
+- (IBAction)getBack:(id)sender {
+    [self.navigationController popViewControllerAnimated:YES];
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
+
 /*
 #pragma mark - Navigation
 

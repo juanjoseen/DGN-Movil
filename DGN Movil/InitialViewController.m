@@ -132,10 +132,21 @@
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     NSString *nombre = [NSString stringWithFormat:@"segue%d",(int)indexPath.row];
     //if (indexPath.row < 4)
+    MenuTableViewCell *cell = (MenuTableViewCell*)[tableView cellForRowAtIndexPath:indexPath];
+    cell.texto.textColor = [UIColor lightGrayColor];
+    cell.backgroundColor = [UIColor clearColor];
+    cell.icono.image = iconos[indexPath.row];
     [self performSegueWithIdentifier:nombre sender:self];
 }
 
 - (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath{
+    MenuTableViewCell *cell = (MenuTableViewCell*)[tableView cellForRowAtIndexPath:indexPath];
+    cell.texto.textColor = [UIColor lightGrayColor];
+    cell.backgroundColor = [UIColor clearColor];
+    cell.icono.image = iconos[indexPath.row];
+}
+
+- (void)tableView:(UITableView *)tableView didUnhighlightRowAtIndexPath:(NSIndexPath *)indexPath{
     MenuTableViewCell *cell = (MenuTableViewCell*)[tableView cellForRowAtIndexPath:indexPath];
     cell.texto.textColor = [UIColor lightGrayColor];
     cell.backgroundColor = [UIColor clearColor];

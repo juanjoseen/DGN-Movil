@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0D24A9121BAB6540009649C5 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D24A9111BAB6540009649C5 /* libsqlite3.tbd */; };
 		0D3DED931B9A0064000D62C5 /* DependenciasViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D3DED921B9A0064000D62C5 /* DependenciasViewController.m */; };
 		0D3DED961B9A0F0A000D62C5 /* RAEViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D3DED951B9A0F0A000D62C5 /* RAEViewController.m */; };
 		0D3DED991B9A2281000D62C5 /* SelectFechasViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D3DED981B9A2281000D62C5 /* SelectFechasViewController.m */; };
@@ -21,6 +22,8 @@
 		0D89F7331B852B6100C54D76 /* SearchByFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D89F7321B852B6100C54D76 /* SearchByFilterViewController.m */; };
 		0D8EBBC61B83A4A400A976CE /* NormDetailsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D8EBBC51B83A4A400A976CE /* NormDetailsViewController.m */; };
 		0D8EBBC91B83B3B800A976CE /* NOMNormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D8EBBC81B83B3B800A976CE /* NOMNormViewController.m */; };
+		0D9B44571BB0DB0F009E22CD /* TramitesyServiciosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D9B44561BB0DB0F009E22CD /* TramitesyServiciosViewController.m */; settings = {ASSET_TAGS = (); }; };
+		0D9B445B1BB0DBDD009E22CD /* AcercaDeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0D9B445A1BB0DBDD009E22CD /* AcercaDeViewController.m */; settings = {ASSET_TAGS = (); }; };
 		0DC722AB19F2AB7100F9DD51 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DC722AA19F2AB7100F9DD51 /* main.m */; };
 		0DC722AE19F2AB7100F9DD51 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DC722AD19F2AB7100F9DD51 /* AppDelegate.m */; };
 		0DC722B119F2AB7100F9DD51 /* DGN_Movil.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0DC722AF19F2AB7100F9DD51 /* DGN_Movil.xcdatamodeld */; };
@@ -86,6 +89,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0D24A9111BAB6540009649C5 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		0D3DED911B9A0064000D62C5 /* DependenciasViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DependenciasViewController.h; sourceTree = "<group>"; };
 		0D3DED921B9A0064000D62C5 /* DependenciasViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DependenciasViewController.m; sourceTree = "<group>"; };
 		0D3DED941B9A0F0A000D62C5 /* RAEViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RAEViewController.h; sourceTree = "<group>"; };
@@ -113,6 +117,10 @@
 		0D8EBBC51B83A4A400A976CE /* NormDetailsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NormDetailsViewController.m; sourceTree = "<group>"; };
 		0D8EBBC71B83B3B800A976CE /* NOMNormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NOMNormViewController.h; sourceTree = "<group>"; };
 		0D8EBBC81B83B3B800A976CE /* NOMNormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NOMNormViewController.m; sourceTree = "<group>"; };
+		0D9B44551BB0DB0F009E22CD /* TramitesyServiciosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TramitesyServiciosViewController.h; sourceTree = "<group>"; };
+		0D9B44561BB0DB0F009E22CD /* TramitesyServiciosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TramitesyServiciosViewController.m; sourceTree = "<group>"; };
+		0D9B44591BB0DBDD009E22CD /* AcercaDeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AcercaDeViewController.h; sourceTree = "<group>"; };
+		0D9B445A1BB0DBDD009E22CD /* AcercaDeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AcercaDeViewController.m; sourceTree = "<group>"; };
 		0DC722A519F2AB7100F9DD51 /* DGN Movil.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "DGN Movil.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0DC722A919F2AB7100F9DD51 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0DC722AA19F2AB7100F9DD51 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -178,6 +186,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0D24A9121BAB6540009649C5 /* libsqlite3.tbd in Frameworks */,
 				0DC722D919F2AC5000F9DD51 /* libsqlite3.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -247,9 +256,10 @@
 				0D83261D1B8261EE003A6583 /* InitialViewController.m */,
 				0D89F7301B852B3A00C54D76 /* Busqueda por Palabra */,
 				0D89F7341B852B6600C54D76 /* Busqueda por Criterio */,
+				0D9B44581BB0DB14009E22CD /* Tramites y Servicios */,
 				0D5CDB9D1BA89B25003C06A4 /* Favoritos */,
-				0D5CDB9E1BA8BFF2003C06A4 /* AyudasViewController.h */,
-				0D5CDB9F1BA8BFF2003C06A4 /* AyudasViewController.m */,
+				0D9B44541BB0DA57009E22CD /* Ayuda */,
+				0D9B445C1BB0DBE2009E22CD /* Acerca De */,
 			);
 			name = "New Views";
 			sourceTree = "<group>";
@@ -282,6 +292,33 @@
 				0D3DED9B1B9A7212000D62C5 /* ResultadoBusquedaViewController.m */,
 			);
 			name = "Busqueda por Criterio";
+			sourceTree = "<group>";
+		};
+		0D9B44541BB0DA57009E22CD /* Ayuda */ = {
+			isa = PBXGroup;
+			children = (
+				0D5CDB9E1BA8BFF2003C06A4 /* AyudasViewController.h */,
+				0D5CDB9F1BA8BFF2003C06A4 /* AyudasViewController.m */,
+			);
+			name = Ayuda;
+			sourceTree = "<group>";
+		};
+		0D9B44581BB0DB14009E22CD /* Tramites y Servicios */ = {
+			isa = PBXGroup;
+			children = (
+				0D9B44551BB0DB0F009E22CD /* TramitesyServiciosViewController.h */,
+				0D9B44561BB0DB0F009E22CD /* TramitesyServiciosViewController.m */,
+			);
+			name = "Tramites y Servicios";
+			sourceTree = "<group>";
+		};
+		0D9B445C1BB0DBE2009E22CD /* Acerca De */ = {
+			isa = PBXGroup;
+			children = (
+				0D9B44591BB0DBDD009E22CD /* AcercaDeViewController.h */,
+				0D9B445A1BB0DBDD009E22CD /* AcercaDeViewController.m */,
+			);
+			name = "Acerca De";
 			sourceTree = "<group>";
 		};
 		0DC7229C19F2AB7000F9DD51 = {
@@ -386,6 +423,7 @@
 		0DDD26B91A0AA0A1004EE64B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				0D24A9111BAB6540009649C5 /* libsqlite3.tbd */,
 				0DDD26BA1A0AA0A1004EE64B /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
@@ -474,7 +512,7 @@
 		0DC7229D19F2AB7000F9DD51 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0600;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = AxkanSoftware;
 				TargetAttributes = {
 					0DC722A419F2AB7000F9DD51 = {
@@ -563,12 +601,14 @@
 				0DDDF04219F3B8F40018B95D /* FavoritosTableViewController.m in Sources */,
 				0D8EBBC61B83A4A400A976CE /* NormDetailsViewController.m in Sources */,
 				0D8326211B828D6B003A6583 /* MenuTableViewCell.m in Sources */,
+				0D9B44571BB0DB0F009E22CD /* TramitesyServiciosViewController.m in Sources */,
 				0D5CDBA01BA8BFF2003C06A4 /* AyudasViewController.m in Sources */,
 				0DC722B419F2AB7100F9DD51 /* ViewController.m in Sources */,
 				0D8EBBC91B83B3B800A976CE /* NOMNormViewController.m in Sources */,
 				0DC722F619F32AB600F9DD51 /* BPCriterioViewController.m in Sources */,
 				0DDDF03F19F3AADF0018B95D /* SearchDetailTableViewController.m in Sources */,
 				0DDDF04D19F4197F0018B95D /* AboutViewController.m in Sources */,
+				0D9B445B1BB0DBDD009E22CD /* AcercaDeViewController.m in Sources */,
 				0DDDF03619F342B40018B95D /* DependenciasTableViewController.m in Sources */,
 				0DDDF03C19F366340018B95D /* FechasViewController.m in Sources */,
 				0DC722E719F2EF2C00F9DD51 /* BPPalabraTableViewController.m in Sources */,
@@ -664,6 +704,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -728,6 +769,7 @@
 				CODE_SIGN_ENTITLEMENTS = "DGN Movil/DGN Movil.entitlements";
 				INFOPLIST_FILE = "DGN Movil/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.axkansoftware.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -741,6 +783,7 @@
 				CODE_SIGN_ENTITLEMENTS = "DGN Movil/DGN Movil.entitlements";
 				INFOPLIST_FILE = "DGN Movil/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.axkansoftware.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -760,6 +803,7 @@
 				);
 				INFOPLIST_FILE = "DGN MovilTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.axkansoftware.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DGN Movil.app/DGN Movil";
 			};
@@ -775,6 +819,7 @@
 				);
 				INFOPLIST_FILE = "DGN MovilTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.axkansoftware.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/DGN Movil.app/DGN Movil";
 			};
@@ -791,6 +836,7 @@
 				INFOPLIST_FILE = "DGN Widget/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.axkansoftware.DGN-Movil.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
@@ -803,6 +849,7 @@
 				INFOPLIST_FILE = "DGN Widget/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.axkansoftware.DGN-Movil.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};

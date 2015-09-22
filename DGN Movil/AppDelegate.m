@@ -8,7 +8,8 @@
 
 #import "AppDelegate.h"
 #import "DataExtractor.h"
-#import "DetailNormaViewController.h"
+#import "NormDetailsViewController.h"
+#import "NOMNormViewController.h"
 
 @interface AppDelegate ()
 
@@ -69,10 +70,17 @@
     NSString *tipo = dict[@"tipo"];
     NSString *clave = dict[@"clave"];
     Norma *norma = nil;
+    UINavigationController *nav = (UINavigationController *)self.window.rootViewController;
     if ([tipo isEqualToString:@"NMX"]){
         norma = [data getNmxByKey:clave];
+        NormDetailsViewController *detail = [nav.storyboard instantiateViewControllerWithIdentifier:@"NMXDetailsID"];
+        detail.norma = norma;
+        [nav pushViewController:detail animated:YES];
     } else if ([tipo isEqualToString:@"NOM"]){
         norma = [data getNomByKey:clave];
+        NOMNormViewController *detail = [nav.storyboard instantiateViewControllerWithIdentifier:@"NOMDetailsID"];
+        detail.norma = norma;
+        [nav pushViewController:detail animated:YES];
     } else {
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Error" message:[NSString stringWithFormat:@"Tipo de norma: '%@' no es un tipo valido",tipo] delegate:self cancelButtonTitle:@"ok" otherButtonTitles:nil, nil];
         [alert show];
@@ -82,10 +90,7 @@
         //DetailNormaViewController *detail = [[DetailNormaViewController alloc] init];
         //detail.norma = norma;
         
-        UINavigationController *nav = (UINavigationController *)self.window.rootViewController;
-        DetailNormaViewController *detail = [nav.storyboard instantiateViewControllerWithIdentifier:@"normaDetalle"];
-        detail.norma = norma;
-        [nav pushViewController:detail animated:YES];
+        
         
     }
     return YES;
