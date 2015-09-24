@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TramitesyServiciosViewController : UIViewController
+@interface TramitesyServiciosViewController : UIViewController<UITableViewDataSource, UITableViewDelegate>
 
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loading;
 @end

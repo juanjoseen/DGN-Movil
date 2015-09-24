@@ -55,6 +55,9 @@
 		0DDDF04D19F4197F0018B95D /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDDF04C19F4197F0018B95D /* AboutViewController.m */; };
 		0DDDF05119F45F8A0018B95D /* catanmx.db in Resources */ = {isa = PBXBuildFile; fileRef = 0DDDF05019F45F8A0018B95D /* catanmx.db */; };
 		0DDDF05419F460C90018B95D /* Ayuda2ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DDDF05319F460C90018B95D /* Ayuda2ViewController.m */; };
+		0DF22AC81BB4A16B0073B337 /* Servicio.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DF22AC71BB4A16B0073B337 /* Servicio.m */; settings = {ASSET_TAGS = (); }; };
+		0DF22ACE1BB4A3B70073B337 /* ServicesTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DF22ACD1BB4A3B70073B337 /* ServicesTableViewCell.m */; settings = {ASSET_TAGS = (); }; };
+		0DF22AD11BB4AF190073B337 /* DetailServiciosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0DF22AD01BB4AF190073B337 /* DetailServiciosViewController.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -179,6 +182,12 @@
 		0DDDF05019F45F8A0018B95D /* catanmx.db */ = {isa = PBXFileReference; lastKnownFileType = file; path = catanmx.db; sourceTree = "<group>"; };
 		0DDDF05219F460C90018B95D /* Ayuda2ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Ayuda2ViewController.h; sourceTree = "<group>"; };
 		0DDDF05319F460C90018B95D /* Ayuda2ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Ayuda2ViewController.m; sourceTree = "<group>"; };
+		0DF22AC61BB4A16B0073B337 /* Servicio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Servicio.h; sourceTree = "<group>"; };
+		0DF22AC71BB4A16B0073B337 /* Servicio.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Servicio.m; sourceTree = "<group>"; };
+		0DF22ACC1BB4A3B70073B337 /* ServicesTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServicesTableViewCell.h; sourceTree = "<group>"; };
+		0DF22ACD1BB4A3B70073B337 /* ServicesTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServicesTableViewCell.m; sourceTree = "<group>"; };
+		0DF22ACF1BB4AF190073B337 /* DetailServiciosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailServiciosViewController.h; sourceTree = "<group>"; };
+		0DF22AD01BB4AF190073B337 /* DetailServiciosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailServiciosViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -308,6 +317,8 @@
 			children = (
 				0D9B44551BB0DB0F009E22CD /* TramitesyServiciosViewController.h */,
 				0D9B44561BB0DB0F009E22CD /* TramitesyServiciosViewController.m */,
+				0DF22ACF1BB4AF190073B337 /* DetailServiciosViewController.h */,
+				0DF22AD01BB4AF190073B337 /* DetailServiciosViewController.m */,
 			);
 			name = "Tramites y Servicios";
 			sourceTree = "<group>";
@@ -401,6 +412,8 @@
 				0DC722D519F2AC0100F9DD51 /* DataExtractor.m */,
 				0DC722DA19F2ACBB00F9DD51 /* Norma.h */,
 				0DC722DB19F2ACBB00F9DD51 /* Norma.m */,
+				0DF22AC61BB4A16B0073B337 /* Servicio.h */,
+				0DF22AC71BB4A16B0073B337 /* Servicio.m */,
 			);
 			name = Datos;
 			sourceTree = "<group>";
@@ -416,6 +429,8 @@
 				0D8326201B828D6B003A6583 /* MenuTableViewCell.m */,
 				0D8326261B82B5B0003A6583 /* SearchByWordTableViewCell.h */,
 				0D8326271B82B5B0003A6583 /* SearchByWordTableViewCell.m */,
+				0DF22ACC1BB4A3B70073B337 /* ServicesTableViewCell.h */,
+				0DF22ACD1BB4A3B70073B337 /* ServicesTableViewCell.m */,
 			);
 			name = CellViews;
 			sourceTree = "<group>";
@@ -601,6 +616,7 @@
 				0DDDF04219F3B8F40018B95D /* FavoritosTableViewController.m in Sources */,
 				0D8EBBC61B83A4A400A976CE /* NormDetailsViewController.m in Sources */,
 				0D8326211B828D6B003A6583 /* MenuTableViewCell.m in Sources */,
+				0DF22ACE1BB4A3B70073B337 /* ServicesTableViewCell.m in Sources */,
 				0D9B44571BB0DB0F009E22CD /* TramitesyServiciosViewController.m in Sources */,
 				0D5CDBA01BA8BFF2003C06A4 /* AyudasViewController.m in Sources */,
 				0DC722B419F2AB7100F9DD51 /* ViewController.m in Sources */,
@@ -614,6 +630,7 @@
 				0DC722E719F2EF2C00F9DD51 /* BPPalabraTableViewController.m in Sources */,
 				0DDDF03919F358BE0018B95D /* RAETableViewController.m in Sources */,
 				0D8326281B82B5B0003A6583 /* SearchByWordTableViewCell.m in Sources */,
+				0DF22AD11BB4AF190073B337 /* DetailServiciosViewController.m in Sources */,
 				0DDDF04A19F419620018B95D /* AyudaViewController.m in Sources */,
 				0DDDF04719F416150018B95D /* TramitesTableViewController.m in Sources */,
 				0DC722D319F2ABEC00F9DD51 /* Conexion.m in Sources */,
@@ -623,6 +640,7 @@
 				0DC722E119F2B79800F9DD51 /* TableViewCell.m in Sources */,
 				0D3DED9C1B9A7212000D62C5 /* ResultadoBusquedaViewController.m in Sources */,
 				0DC722EF19F31A0600F9DD51 /* NormaTableViewCell.m in Sources */,
+				0DF22AC81BB4A16B0073B337 /* Servicio.m in Sources */,
 				0D83261E1B8261EE003A6583 /* InitialViewController.m in Sources */,
 				0D3DED961B9A0F0A000D62C5 /* RAEViewController.m in Sources */,
 				0DC722DC19F2ACBB00F9DD51 /* Norma.m in Sources */,

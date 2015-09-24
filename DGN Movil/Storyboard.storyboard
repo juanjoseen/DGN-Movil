@@ -93,6 +93,58 @@
             </objects>
             <point key="canvasLocation" x="911" y="427"/>
         </scene>
+        <!--Detail Servicios View Controller-->
+        <scene sceneID="K41-kz-hsw">
+            <objects>
+                <viewController id="XB3-a6-plK" customClass="DetailServiciosViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="vH9-Oc-Lhs">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" id="gOC-0a-luw">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="60"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="9" adjustsLetterSpacingToFitWidth="YES" id="Td1-45-yqt">
+                                        <rect key="frame" x="70" y="19" width="180" height="33"/>
+                                        <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="DJw-5n-j6G">
+                                        <rect key="frame" x="8" y="19" width="36" height="36"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" image="02BSuperior02Atrás">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="getBack" destination="dWh-Tp-edQ" eventType="touchUpInside" id="fnt-X7-639"/>
+                                            <action selector="getBack:" destination="XB3-a6-plK" eventType="touchUpInside" id="7HR-gM-zhh"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.01176470588" green="0.36470588240000001" blue="0.019607843140000001" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="dadsadasdada" textAlignment="natural" id="tGU-Wn-amY">
+                                <rect key="frame" x="20" y="80" width="280" height="468"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="fuP-dw-Cx4"/>
+                    <connections>
+                        <outlet property="contenido" destination="tGU-Wn-amY" id="p0A-qq-ZJm"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eKt-rt-x8p" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="371" y="-900"/>
+        </scene>
         <!--Tramitesy Servicios View Controller-->
         <scene sceneID="vX0-4M-6Oc">
             <objects>
@@ -125,10 +177,47 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.01176470588" green="0.36470588240000001" blue="0.019607843140000001" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" id="lot-Zx-BRr">
+                                <rect key="frame" x="0.0" y="60" width="320" height="508"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="90" id="92z-Jz-ix2" customClass="ServicesTableViewCell">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="90"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="92z-Jz-ix2" id="H6D-BG-z5S">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="89"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="12" adjustsLetterSpacingToFitWidth="YES" id="OSg-Gu-z3I">
+                                                    <rect key="frame" x="8" y="8" width="304" height="73"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="lblTitulo" destination="OSg-Gu-z3I" id="omB-Nt-RyQ"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="whiteLarge" id="z0X-rJ-fjN">
+                                <rect key="frame" x="142" y="265" width="37" height="37"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES" flexibleMaxY="YES"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="Scp-vz-Q6G"/>
+                    <connections>
+                        <outlet property="loading" destination="z0X-rJ-fjN" id="0jq-6g-LJf"/>
+                        <outlet property="tableView" destination="lot-Zx-BRr" id="3yL-Vn-zDW"/>
+                        <segue destination="XB3-a6-plK" kind="push" identifier="toDetailServicios" id="wEw-yF-P3Y"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S7U-wR-4Ol" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -269,6 +358,23 @@
                                 </subviews>
                                 <color key="backgroundColor" red="0.01176470588" green="0.36470588240000001" blue="0.019607843140000001" alpha="1" colorSpace="calibratedRGB"/>
                             </view>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="justified" id="RTn-qd-2Vf">
+                                <rect key="frame" x="20" y="68" width="280" height="319"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <string key="text">Toda empresa que quiera vender un producto o servicio debe cumplir con lineamientos, esto redundará en un mejor posicionamiento en el mercado e incremento de la calidad del producto o servicio que ofrezca.
+
+De acuerdo con el Manual General de Organización de la Secretaría de Economía, la Dirección General de Normas es responsable de coordinar el sistema de normalización y evaluación de la conformidad, con base en lo dispuesto en Ley Federal sobre Metrología y Normalización y su Reglamento, para fomentar la competitividad de la industria y el comercio en el ámbito nacional e internacional.
+
+http://economia.gob.mx/comunidad-negocios/competitividad-normatividad/normalizacion/dgn</string>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" link="YES"/>
+                            </textView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo Axkan" id="aB4-M4-Qo5">
+                                <rect key="frame" x="84" y="395" width="153" height="153"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -1456,6 +1562,7 @@
         <image name="Ayuda2" width="641" height="997"/>
         <image name="EstrellaMediana" width="23" height="22"/>
         <image name="EstrellaMedianaA" width="23" height="22"/>
+        <image name="Logo Axkan" width="224" height="280"/>
         <image name="Portada" width="320" height="470"/>
         <image name="delete" width="20" height="20"/>
     </resources>

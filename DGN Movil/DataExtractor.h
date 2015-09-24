@@ -8,6 +8,7 @@
 
 #import "Conexion.h"
 #import "Norma.h"
+#import "Servicio.h"
 
 #define RGB_COLOR(R, G, B) [UIColor colorWithRed:R/255.0 green:G/255.0 blue:B/255.0 alpha:1.0]
 #define RGBA_COLOR(R, G, B, A) [UIColor colorWithRed:R/255.0 green:G/255.0 blue:B/255.0 alpha:A]
@@ -45,5 +46,7 @@
 
 - (NSMutableArray *)searchInNMX:(NSString *)text;
 - (NSMutableArray *)searchInNOM:(NSString *)text;
+
+- (NSMutableArray *)getServices;
 
 @end

@@ -685,7 +685,7 @@ http://economia.gob.mx/comunidad-negocios/competitividad-normatividad/normalizac
                         <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" rowHeight="121" id="myB-Ss-mhA" customClass="NormaTableViewCell">
-                                <rect key="frame" x="0.0" y="86" width="320" height="121"/>
+                                <rect key="frame" x="0.0" y="22" width="320" height="121"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="myB-Ss-mhA" id="ebp-Fd-9pw">
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="121"/>
