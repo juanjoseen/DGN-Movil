@@ -55,7 +55,7 @@
 
 
 - (void)updateLabels{
-    NSUserDefaults *sharedDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.axkansoftware.DGNSharingDefaults"];
+    NSUserDefaults *sharedDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.axkansoftware.DGNDefaults"];
     NSString *nmx_clave = [sharedDefaults objectForKey:@"nmxClave"];
     NSString *nmx_titulo = [sharedDefaults objectForKey:@"nmxTitulo"];
     if (nmx_clave){

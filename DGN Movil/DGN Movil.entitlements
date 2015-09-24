@@ -4,7 +4,7 @@
 <dict>
 	<key>com.apple.security.application-groups</key>
 	<array>
-		<string>group.axkansoftware.DGNSharingDefaults</string>
+		<string>group.axkansoftware.DGNDefaults</string>
 	</array>
 </dict>
 </plist>

@@ -206,7 +206,7 @@
         [all addObject:nmx];
     }
     
-    NSUserDefaults *sharedDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.axkansoftware.DGNSharingDefaults"];
+    NSUserDefaults *sharedDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.axkansoftware.DGNDefaults"];
     Norma *nmx = all[0];
     [sharedDefaults setObject:nmx.clave forKey:@"nmxClave"];
     [sharedDefaults setObject:nmx.titulo forKey:@"nmxTitulo"];
@@ -272,7 +272,7 @@
         [all addObject:nom];
     }
     
-    NSUserDefaults *sharedDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.axkansoftware.DGNSharingDefaults"];
+    NSUserDefaults *sharedDefaults = [[NSUserDefaults alloc] initWithSuiteName:@"group.axkansoftware.DGNDefaults"];
     Norma *nom = all[0];
     [sharedDefaults setObject:nom.clave forKey:@"nomClave"];
     [sharedDefaults setObject:nom.titulo forKey:@"nomTitulo"];
